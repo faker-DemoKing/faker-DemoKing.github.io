@@ -7,14 +7,17 @@
   
   <title>ansible-templates | 我以为是规则,失去最爱的一个,才能记忆深刻</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="1.介绍12345678910111213文本文件,嵌套有脚本（使用模板编程语言编写）jinja2语言，使用字面量，# 字符类型：    字符串：使用单引号或双引号    数字：整数、浮点数    列表：[item1,item2]    元组：(item1,item2)    字典：&amp;#123;key1:value1,key2:value2&amp;#125;    布尔型：true/false# 算术运">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ansible-templates">
 <meta property="og:url" content="http://yoursite.com/2019/10/08/ansible-templates/index.html">
 <meta property="og:site_name" content="我以为是规则,失去最爱的一个,才能记忆深刻">
+<meta property="og:description" content="1.介绍12345678910111213文本文件,嵌套有脚本（使用模板编程语言编写）jinja2语言，使用字面量，# 字符类型：    字符串：使用单引号或双引号    数字：整数、浮点数    列表：[item1,item2]    元组：(item1,item2)    字典：&amp;#123;key1:value1,key2:value2&amp;#125;    布尔型：true/false# 算术运">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-10-08T13:33:01.433Z">
+<meta property="og:updated_time" content="2019-10-08T18:12:13.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ansible-templates">
+<meta name="twitter:description" content="1.介绍12345678910111213文本文件,嵌套有脚本（使用模板编程语言编写）jinja2语言，使用字面量，# 字符类型：    字符串：使用单引号或双引号    数字：整数、浮点数    列表：[item1,item2]    元组：(item1,item2)    字典：&amp;#123;key1:value1,key2:value2&amp;#125;    布尔型：true/false# 算术运">
   
     <link rel="alternate" href="/atom.xml" title="我以为是规则,失去最爱的一个,才能记忆深刻" type="application/atom+xml">
   
@@ -87,7 +90,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">文本文件,嵌套有脚本（使用模板编程语言编写）</span><br><span class="line">jinja2语言，使用字面量，</span><br><span class="line"><span class="comment"># 字符类型：</span></span><br><span class="line">    字符串：使用单引号或双引号</span><br><span class="line">    数字：整数、浮点数</span><br><span class="line">    列表：[item1,item2]</span><br><span class="line">    元组：(item1,item2)</span><br><span class="line">    字典：&#123;key1:value1,key2:value2&#125;</span><br><span class="line">    布尔型：<span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line"><span class="comment"># 算术运算：+,-,*,/,//,%,**</span></span><br><span class="line"><span class="comment"># 比较运算：==,!=,&gt;=,&lt;=,&lt;,&gt;</span></span><br><span class="line"><span class="comment"># 逻辑运算：and，or，not</span></span><br><span class="line"><span class="comment"># 流表达式：for if when</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>when</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">条件测试，如果需要根据变量、facts或此前任务的执行结果来作为某task执行与否的前提时要用到条件测试，通过when语句实现，在task中使用jinja2的语法格式</span><br><span class="line">示例：</span><br><span class="line">    - name: <span class="string">"shutdown readhat flavored systems"</span></span><br><span class="line">      <span class="built_in">command</span>: /sbin/shutdown -h now</span><br><span class="line">      when: ansible_os_family == <span class="string">"ReadHat"</span> <span class="comment"># 如果这个条件对了，才会执行command命令</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>with_items</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">迭代，当有需要重复性执行的任务时，可以使用迭代机制</span><br><span class="line">对迭代项的引用，固定变量名为“item”</span><br><span class="line">要在task中使用with_items给定要迭代的元素列表</span><br><span class="line">列表格式：</span><br><span class="line">    字符串</span><br><span class="line">    字典</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套子变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">  remote_user: root</span><br><span class="line"></span><br><span class="line">  tasks:</span><br><span class="line">  - name: add some groups</span><br><span class="line">    group: name=&#123;&#123; item &#125;&#125; state=present</span><br><span class="line">    with_items:</span><br><span class="line">    - group1</span><br><span class="line">    - group2</span><br><span class="line">    - group3</span><br><span class="line">  - name: add some users</span><br><span class="line">    user: name=&#123;&#123; item.name &#125;&#125; group=&#123;&#123; item.group &#125;&#125; state=present</span><br><span class="line">    with_items:</span><br><span class="line">    - &#123;name:<span class="string">'user1'</span>,grouL:<span class="string">'group1'</span>&#125;</span><br><span class="line">    - &#123;name:<span class="string">'user2'</span>,grouL:<span class="string">'group2'</span>&#125;</span><br><span class="line">    - &#123;name:<span class="string">'user3'</span>,grouL:<span class="string">'group3'</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for if</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> vhost <span class="keyword">in</span> nginx_vhosts %&#125;</span><br><span class="line">server&#123;</span><br><span class="line">    lisnten &#123;&#123; vhost.listen|default(<span class="string">'80 default_server'</span>) &#125;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> vhost.server_name is defined  %&#125;</span><br><span class="line"> server_name &#123;&#123; vhos.server_name &#125;&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="2实战"><a href="#2实战" class="headerlink" title="2实战"></a>2实战</h1><h2 id="2-1-根据cpu核心数修改nginx的进程数"><a href="#2-1-根据cpu核心数修改nginx的进程数" class="headerlink" title="2.1 根据cpu核心数修改nginx的进程数"></a>2.1 根据cpu核心数修改nginx的进程数</h2><ul>
+<li><p>nginx.conf.j2文件主要修改内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worker_processes &#123;&#123; ansible_processor_vcpus**2 &#125;&#125;;</span><br><span class="line"><span class="comment"># ansible_processor_vcpus 这个变量是来自于 -m  setup的主机信息里的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>playbook内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">  remote_user: root</span><br><span class="line"></span><br><span class="line">  tasks:</span><br><span class="line">  - name: install nginx</span><br><span class="line">    apt: name=nginx</span><br><span class="line">  - name: copy template conf file</span><br><span class="line">    template: src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf</span><br><span class="line">    notify: restart nginx</span><br><span class="line">  - name: start service</span><br><span class="line">    service: name=nginx state=started enabled=yes</span><br><span class="line"></span><br><span class="line">  handlers:</span><br><span class="line">  - name: restart nginx</span><br><span class="line">    service: name=nginx state=restarted enabled=yes</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-2-使用with-items和when"><a href="#2-2-使用with-items和when" class="headerlink" title="2.2 使用with_items和when"></a>2.2 使用with_items和when</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">  remote_user: root</span><br><span class="line">  tasks:</span><br><span class="line">  - name: create some file</span><br><span class="line">    file: name=/data/&#123;&#123; item &#125;&#125; state=touch</span><br><span class="line">    when: ansible_distribution_version==<span class="string">"16.04"</span></span><br><span class="line">    with_items:</span><br><span class="line">    - file1</span><br><span class="line">    - file2</span><br><span class="line">    - file3</span><br><span class="line"></span><br><span class="line">  - name: install some packages</span><br><span class="line">    yum: name=&#123;&#123; item &#125;&#125;</span><br><span class="line">    when: ansible_distribution==<span class="string">"Centos"</span></span><br><span class="line">    wih_items:</span><br><span class="line">    - htop</span><br><span class="line">    - sl</span><br><span class="line">    - httping</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-使用for-if生成模板文件"><a href="#2-3-使用for-if生成模板文件" class="headerlink" title="2.3 使用for if生成模板文件"></a>2.3 使用for if生成模板文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">  remote_user: root</span><br><span class="line">  vars:</span><br><span class="line">    ports:</span><br><span class="line">    - 81</span><br><span class="line">    - 82</span><br><span class="line">    - 83</span><br><span class="line">    </span><br><span class="line">  tasks:</span><br><span class="line">  - name: copy conf</span><br><span class="line">    template: src=nginx.conf.j2 dest=/data/nginx.conf</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -142,10 +173,6 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2019/10/08/Docker/">Docker</a>
-          </li>
         
           <li>
             <a href="/2019/10/08/ansible-modules/">ansible-modules</a>
