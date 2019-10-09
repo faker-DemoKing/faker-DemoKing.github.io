@@ -197,10 +197,17 @@
 
 </li>
 </ul>
-<h1 id="10-cron"><a href="#10-cron" class="headerlink" title="10. cron"></a>10. cron</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">计划任务</span><br><span class="line">支持时间：minute，hour，day，month，weekday</span><br><span class="line">ansible-doc cron</span><br><span class="line">``` </span><br><span class="line">* 例子1：创建任务</span><br><span class="line">``` bash</span><br><span class="line">ansible all -m cron -a <span class="string">"minute=*/5 job='/data/shell/nginx_reload.sh &amp;&gt;/dev/null' name=nginx-reload"</span></span><br><span class="line">``` </span><br><span class="line">* 例子2：删除任务</span><br><span class="line">``` bash</span><br><span class="line">ansible all -m cron -a <span class="string">'state=absent name=nginx-reload'</span></span><br></pre></td></tr></table></figure>
+<h1 id="10-cron"><a href="#10-cron" class="headerlink" title="10. cron"></a>10. cron</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">计划任务</span><br><span class="line">支持时间：minute，hour，day，month，weekday</span><br><span class="line">ansible-doc cron</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>例子3：临时禁用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">'disabled=true name=nginx-reload job="/data/shell/nginx_reload.sh &amp;&gt;/dev/null"'</span></span><br><span class="line"><span class="comment"># disabled </span></span><br><span class="line">    <span class="comment"># true 关闭：也就是给注释了 yes也可以</span></span><br><span class="line">    <span class="comment"># false 开启：也是就是给取消注释了 no也可以</span></span><br></pre></td></tr></table></figure>
+<li><p>例子1：创建任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">"minute=*/5 job='/data/shell/nginx_reload.sh &amp;&gt;/dev/null' name=nginx-reload"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子2：删除任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">'state=absent name=nginx-reload'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子3：临时禁用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">'disabled=true name=nginx-reload job="/data/shell/nginx_reload.sh &amp;&gt;/dev/null"'</span></span><br><span class="line"><span class="comment"># disabled </span></span><br><span class="line">    <span class="comment"># true 关闭：也就是给注释了 yes也可以</span></span><br><span class="line">    <span class="comment"># false 开启：也是就是给取消注释了 no也可以</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
