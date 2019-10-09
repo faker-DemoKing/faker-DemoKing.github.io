@@ -232,7 +232,11 @@
 <h1 id="13-user"><a href="#13-user" class="headerlink" title="13.user"></a>13.user</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户管理模块</span><br><span class="line">ansible-doc user</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>例子-1：创建用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m user -a <span class="string">'name=nginx shell=/sbin/nologin system=yes home=/home/nginx groups=root,nginx uid=80 comment="nginx user"'</span></span><br><span class="line">``` </span><br><span class="line">* 例子-2：删除用户</span><br><span class="line">``` bash</span><br><span class="line">ansible all -m user -a <span class="string">'name=nginx state=absent remove=yes'</span></span><br><span class="line"><span class="comment"># remove </span></span><br><span class="line">    <span class="comment"># yes 删除家目录</span></span><br><span class="line">    <span class="comment"># no 不删除</span></span><br></pre></td></tr></table></figure>
+<li><p>例子-1：创建用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m user -a <span class="string">'name=nginx shell=/sbin/nologin system=yes home=/home/nginx groups=root,nginx uid=80 comment="nginx user"'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：删除用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m user -a <span class="string">'name=nginx state=absent remove=yes'</span></span><br><span class="line"><span class="comment"># remove </span></span><br><span class="line">    <span class="comment"># yes 删除家目录</span></span><br><span class="line">    <span class="comment"># no 不删除</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
