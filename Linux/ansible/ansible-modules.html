@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ansible-modules | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.ansible-doc 查看现在的模块有哪些 1ansible-doc -l  查看某个模块的简要说明 12ansible-doc -s pingansible-doc ping    2.command 简介12在远程主机执行命令，默认模块，可忽略选项-m选项ansible-doc command    2.1 几个简单参数 chdir 切换目录 1ansible all -m comman">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ansible-modules">
+<meta property="og:url" content="http://yoursite.com/Linux/ansible/ansible-modules.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.ansible-doc 查看现在的模块有哪些 1ansible-doc -l  查看某个模块的简要说明 12ansible-doc -s pingansible-doc ping    2.command 简介12在远程主机执行命令，默认模块，可忽略选项-m选项ansible-doc command    2.1 几个简单参数 chdir 切换目录 1ansible all -m comman">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-10-13T09:11:13.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ansible-modules">
+<meta name="twitter:description" content="1.ansible-doc 查看现在的模块有哪些 1ansible-doc -l  查看某个模块的简要说明 12ansible-doc -s pingansible-doc ping    2.command 简介12在远程主机执行命令，默认模块，可忽略选项-m选项ansible-doc command    2.1 几个简单参数 chdir 切换目录 1ansible all -m comman">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Linux/ansible/ansible-modules.html" class="article-date">
+  <time datetime="2019-10-08T13:34:48.000Z" itemprop="datePublished">2019-10-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ansible-modules
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-ansible-doc"><a href="#1-ansible-doc" class="headerlink" title="1.ansible-doc"></a>1.ansible-doc</h1><ul>
+<li><p>查看现在的模块有哪些</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-doc -l</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看某个模块的简要说明</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-doc -s ping</span><br><span class="line">ansible-doc ping</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="2-command"><a href="#2-command" class="headerlink" title="2.command"></a>2.command</h1><ul>
+<li>简介<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在远程主机执行命令，默认模块，可忽略选项-m选项</span><br><span class="line">ansible-doc <span class="built_in">command</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-1-几个简单参数"><a href="#2-1-几个简单参数" class="headerlink" title="2.1 几个简单参数"></a>2.1 几个简单参数</h2><ul>
+<li><p>chdir 切换目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m <span class="built_in">command</span> -a <span class="string">'chdir=/data/mysql rm -rf'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>creates 如果存在某个文件就不执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m <span class="built_in">command</span> -a <span class="string">'creates=/data/mysql/mysql/qqq.ibd rm -rf'</span></span><br><span class="line"><span class="comment"># 反之 如果存在就执行</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>removes 如果某个文件存在就执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m <span class="built_in">command</span> -a <span class="string">'removes=/data/mysql/mysql/qqq.ibd rm -rf'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-2-command-的问题"><a href="#2-2-command-的问题" class="headerlink" title="2.2 command 的问题"></a>2.2 command 的问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> 模块对一些神秘字符的支持是有问题的比如重定向</span><br><span class="line">ansible all -m <span class="built_in">command</span> -a <span class="string">'&gt; /a.txt'</span></span><br><span class="line">这个时候我们可以使用shell模块</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-shell"><a href="#3-shell" class="headerlink" title="3.shell"></a>3.shell</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-doc shell</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-script"><a href="#4-script" class="headerlink" title="4.script"></a>4.script</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在传统环境下，一百台机器运行一个脚本，那么都要把脚本拷到这一百台上，才能执行，但是script模块就不用了</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m script -a <span class="string">'/data/sh/host.sh'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="5-copy"><a href="#5-copy" class="headerlink" title="5.copy"></a>5.copy</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">拷贝文件的模块</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m copy -a <span class="string">'src=本地源文件 dest=远程目标文件 backup=yes mode=644 owner=ops'</span></span><br><span class="line">backup为是否备份远程目标文件（如果存在则备份）</span><br><span class="line">mode修改权限</span><br><span class="line">owner修改属主</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m copy -a <span class="string">'content="hello\nworld\n" dest=/data/f1'</span></span><br><span class="line"><span class="comment"># content自己指定文件内容到远程文件里，生成一个文件</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="6-fetch"><a href="#6-fetch" class="headerlink" title="6.fetch"></a>6.fetch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">从远处拉取文件到ansible这台机器上,只能抓取单个文件</span><br><span class="line">ansible-doc fetch</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例子1<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m fetch <span class="string">'src=远程主机源文件 dest=本地目标目录'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="7-unarchive"><a href="#7-unarchive" class="headerlink" title="7. unarchive"></a>7. unarchive</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解包模块</span><br><span class="line">ansible-doc unarchive</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-file"><a href="#8-file" class="headerlink" title="8.file"></a>8.file</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">专业的文件模块 拷贝文件推荐使用</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子1：创建一个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m file -a <span class="string">'path=/data/f2 sate=touch'</span></span><br><span class="line"><span class="comment"># path 也可以使用 name  或者dest</span></span><br><span class="line"><span class="comment"># state 是状态</span></span><br><span class="line">    <span class="comment"># touch 新建</span></span><br><span class="line">    <span class="comment"># absent 删掉 文件和目录、软连接都用这个</span></span><br><span class="line">    <span class="comment"># directory 创建文件夹</span></span><br><span class="line">    <span class="comment"># link 软连接</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子2：创建软连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m file -a <span class="string">'src=/data/f1 dest=~/f1.link state=link'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="9-hostname"><a href="#9-hostname" class="headerlink" title="9.hostname"></a>9.hostname</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主机名模块</span><br><span class="line">ansible-doc hostname</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例子1：修改主机名<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible 192.168.1.1 -m hostname -a <span class="string">'name=web-node1'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="10-cron"><a href="#10-cron" class="headerlink" title="10. cron"></a>10. cron</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">计划任务</span><br><span class="line">支持时间：minute，hour，day，month，weekday</span><br><span class="line">ansible-doc cron</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子1：创建任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">"minute=*/5 job='/data/shell/nginx_reload.sh &amp;&gt;/dev/null' name=nginx-reload"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子2：删除任务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">'state=absent name=nginx-reload'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子3：临时禁用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m cron -a <span class="string">'disabled=true name=nginx-reload job="/data/shell/nginx_reload.sh &amp;&gt;/dev/null"'</span></span><br><span class="line"><span class="comment"># disabled </span></span><br><span class="line">    <span class="comment"># true 关闭：也就是给注释了 yes也可以</span></span><br><span class="line">    <span class="comment"># false 开启：也是就是给取消注释了 no也可以</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="11-yum模块"><a href="#11-yum模块" class="headerlink" title="11.yum模块"></a>11.yum模块</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum 安装模块，相应的对于ubuntu也有apt模块</span><br><span class="line">ansible-doc yum</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子1：安装软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m yum -a <span class="string">'name=vsftpd state=present'</span></span><br><span class="line"><span class="comment"># state: 状态</span></span><br><span class="line">    <span class="comment"># present，installed，latest 安装</span></span><br><span class="line">    <span class="comment"># absent，removed 卸载</span></span><br><span class="line"><span class="comment"># name 包名,多个软件 包1，包2，这样既可</span></span><br><span class="line">    <span class="comment"># 也可以是个rpm包，这时候name就写rpm包的路径了</span></span><br><span class="line">ansible all -m yum -a <span class="string">'name/root/vsftpd-3.1.el7.x86_64.rpm disable_gpg_check=yes'</span></span><br><span class="line"><span class="comment"># disable_gpg_check 忽略gpg检查</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子2：查看已安装的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m yum -a <span class="string">'list=installed'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="12-service"><a href="#12-service" class="headerlink" title="12.service"></a>12.service</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">服务管理</span><br><span class="line">ansible-doc service</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例子1：启动某个服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m service -a <span class="string">'name=vsftpd state=started enabled=yes'</span></span><br><span class="line"><span class="comment"># state</span></span><br><span class="line">    <span class="comment"># 状态：</span></span><br><span class="line">        <span class="comment"># stated 开启</span></span><br><span class="line">        <span class="comment"># stopped 暂停</span></span><br><span class="line">        <span class="comment"># restart 重启</span></span><br><span class="line"><span class="comment"># enabled</span></span><br><span class="line">    <span class="comment"># 是否开机启动</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="13-user"><a href="#13-user" class="headerlink" title="13.user"></a>13.user</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户管理模块</span><br><span class="line">ansible-doc user</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子-1：创建用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m user -a <span class="string">'name=nginx shell=/sbin/nologin system=yes home=/home/nginx groups=root,nginx uid=80 comment="nginx user"'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：删除用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m user -a <span class="string">'name=nginx state=absent remove=yes'</span></span><br><span class="line"><span class="comment"># remove </span></span><br><span class="line">    <span class="comment"># yes 删除家目录</span></span><br><span class="line">    <span class="comment"># no 不删除</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="14-group"><a href="#14-group" class="headerlink" title="14.group"></a>14.group</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">组管理</span><br><span class="line">ansible-doc group</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子-1：创建组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m group -a <span class="string">'name=nginx system=yes gid=80'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：删除组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m group -a <span class="string">'name=nginx state=absent'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="15-setup"><a href="#15-setup" class="headerlink" title="15 setup"></a>15 setup</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-doc setup</span><br><span class="line">查看主机的各种信息，也可以当做变量使用</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例子-1：查看主机所有的状态信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m setup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：过滤信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m setup -a <span class="string">'filter=ansible_all_ipv4_addresses'</span></span><br><span class="line"><span class="comment"># 也支持通配符</span></span><br><span class="line">ansible all -m setup -a <span class="string">'filter=*address*'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/Linux/ansible/ansible-modules.html" data-id="ck1orrqi60001lwur5jqslbup" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/Github-Pages/">Github-Pages</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
