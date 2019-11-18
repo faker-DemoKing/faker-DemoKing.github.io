@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Faker">
 <meta property="og:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T19:09:59.452Z">
+<meta property="og:updated_time" content="2019-11-18T19:10:13.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单认识并配置Django">
 <meta name="twitter:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
@@ -130,9 +130,7 @@
 
 </li>
 </ul>
-<h3 id="2-3-自己生成url"><a href="#2-3-自己生成url" class="headerlink" title="2.3 自己生成url"></a>2.3 自己生成url</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line">v = reverse(<span class="string">'index'</span>,args=(<span class="number">90</span>,))</span><br><span class="line">args是urls定义的传参</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-基于正则表达式的url"><a href="#2-4-基于正则表达式的url" class="headerlink" title="2.4 基于正则表达式的url"></a>2.4 基于正则表达式的url</h3><ul>
+<h3 id="2-3-自己生成url"><a href="#2-3-自己生成url" class="headerlink" title="2.3 自己生成url"></a>2.3 自己生成url</h3><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line">v = reverse(<span class="string">'index'</span>,args=(<span class="number">90</span>,))</span><br><span class="line">args是urls定义的传参</span><br></pre></td></tr></table></figure></code></pre><h3 id="2-4-基于正则表达式的url"><a href="#2-4-基于正则表达式的url" class="headerlink" title="2.4 基于正则表达式的url"></a>2.4 基于正则表达式的url</h3><ul>
 <li><p>urls.py</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'index/'</span>,views.index),</span><br><span class="line">    re_path(<span class="string">r'^detail-(\d+).html$'</span>,views.detail),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
