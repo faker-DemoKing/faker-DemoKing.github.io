@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>缓存 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 简介由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。 1.1 Django中提供了6种缓存方式： 开发调试  内存  文件  数据库">
+<meta property="og:type" content="website">
+<meta property="og:title" content="缓存">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/缓存.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1 简介由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。 1.1 Django中提供了6种缓存方式： 开发调试  内存  文件  数据库">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T19:52:04.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="缓存">
+<meta name="twitter:description" content="1 简介由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。 1.1 Django中提供了6种缓存方式： 开发调试  内存  文件  数据库">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/缓存.html" class="article-date">
+  <time datetime="2019-11-18T19:49:52.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      缓存
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。</p>
+<h2 id="1-1-Django中提供了6种缓存方式："><a href="#1-1-Django中提供了6种缓存方式：" class="headerlink" title="1.1 Django中提供了6种缓存方式："></a>1.1 Django中提供了6种缓存方式：</h2><ul>
+<li><p>开发调试</p>
+</li>
+<li><p>内存</p>
+</li>
+<li><p>文件</p>
+</li>
+<li><p>数据库</p>
+</li>
+<li><p>Memcache缓存（python-memcached模块）</p>
+</li>
+<li><p>Memcache缓存（pylibmc模块）</p>
+<h1 id="2-六种方式的举例"><a href="#2-六种方式的举例" class="headerlink" title="2 六种方式的举例"></a>2 六种方式的举例</h1><h2 id="2-1-开发调试"><a href="#2-1-开发调试" class="headerlink" title="2.1 开发调试"></a>2.1 开发调试</h2><p>此为开始调试用，实际内部不做任何操作</p>
+</li>
+<li><p>配置</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.dummy.DummyCache'</span>,     <span class="comment"># 引擎</span></span><br><span class="line">        <span class="string">'TIMEOUT'</span>: <span class="number">300</span>,                                               <span class="comment"># 缓存超时时间（默认300，None表示永不过期，0表示立即过期）</span></span><br><span class="line">        <span class="string">'OPTIONS'</span>:&#123;</span><br><span class="line">            <span class="string">'MAX_ENTRIES'</span>: <span class="number">300</span>,                                       <span class="comment"># 最大缓存个数（默认300）</span></span><br><span class="line">            <span class="string">'CULL_FREQUENCY'</span>: <span class="number">3</span>,                                      <span class="comment"># 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'KEY_PREFIX'</span>: <span class="string">''</span>,                                             <span class="comment"># 缓存key的前缀（默认空）</span></span><br><span class="line">        <span class="string">'VERSION'</span>: <span class="number">1</span>,                                                 <span class="comment"># 缓存key的版本（默认1）</span></span><br><span class="line">        <span class="string">'KEY_FUNCTION'</span> 函数名                                          <span class="comment"># 生成key的函数（默认函数会生成为：【前缀:版本:key】）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义key</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">default_key_func</span><span class="params">(key, key_prefix, version)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Default function to generate keys.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Constructs the key used by all other methods. By default it prepends</span></span><br><span class="line"><span class="string">    the `key_prefix'. KEY_FUNCTION can be used to specify an alternate</span></span><br><span class="line"><span class="string">    function with custom key making behavior.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'%s:%s:%s'</span> % (key_prefix, version, key)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_key_func</span><span class="params">(key_func)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Function to decide which key function to use.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Defaults to ``default_key_func``.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> key_func <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> callable(key_func):</span><br><span class="line">            <span class="keyword">return</span> key_func</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> import_string(key_func)</span><br><span class="line">    <span class="keyword">return</span> default_key_func</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-2-内存"><a href="#2-2-内存" class="headerlink" title="2.2 内存"></a>2.2 内存</h2><p>此缓存将内容保存至内存的变量中</p>
+<ul>
+<li>配置：  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.locmem.LocMemCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'unique-snowflake'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 注：其他配置同开发调试版本</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-3-文件"><a href="#2-3-文件" class="headerlink" title="2.3 文件"></a>2.3 文件</h2><p>此缓存将内容保存至文件</p>
+<ul>
+<li>配置：  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.filebased.FileBasedCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'/var/tmp/django_cache'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 注：其他配置同开发调试版本</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-4-数据库"><a href="#2-4-数据库" class="headerlink" title="2.4 数据库"></a>2.4 数据库</h2><p>此缓存将内容保存至数据库</p>
+<ul>
+<li>配置：  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.db.DatabaseCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'my_cache_table'</span>, <span class="comment"># 数据库表</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 注：执行创建表命令 python manage.py createcachetable</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-5-memcached缓存（python-memcached模块）"><a href="#2-5-memcached缓存（python-memcached模块）" class="headerlink" title="2.5 memcached缓存（python-memcached模块）"></a>2.5 memcached缓存（python-memcached模块）</h2><p>此缓存使用python-memcached模块连接memcache</p>
+<ul>
+<li>配置  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.MemcachedCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'127.0.0.1:11211'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.MemcachedCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'unix:/tmp/memcached.sock'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.MemcachedCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: [</span><br><span class="line">            <span class="string">'172.19.26.240:11211'</span>,</span><br><span class="line">            <span class="string">'172.19.26.242:11211'</span>,</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>8.2.6 Memcache缓存（pylibmc模块）<br>此缓存使用pylibmc模块连接memcache</p>
+<ul>
+<li>配置  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.PyLibMCCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'127.0.0.1:11211'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.PyLibMCCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: <span class="string">'/tmp/memcached.sock'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.core.cache.backends.memcached.PyLibMCCache'</span>,</span><br><span class="line">        <span class="string">'LOCATION'</span>: [</span><br><span class="line">            <span class="string">'172.19.26.240:11211'</span>,</span><br><span class="line">            <span class="string">'172.19.26.242:11211'</span>,</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-7-Redis缓存（依赖：pip3-install-django-redis）"><a href="#2-7-Redis缓存（依赖：pip3-install-django-redis）" class="headerlink" title="2.7 Redis缓存（依赖：pip3 install django-redis）"></a>2.7 Redis缓存（依赖：pip3 install django-redis）</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CACHES = &#123;</span><br><span class="line">    <span class="string">"default"</span>: &#123;</span><br><span class="line">        <span class="string">"BACKEND"</span>: <span class="string">"django_redis.cache.RedisCache"</span>,</span><br><span class="line">        <span class="string">"LOCATION"</span>: <span class="string">"redis://127.0.0.1:6379"</span>,</span><br><span class="line">        <span class="string">"OPTIONS"</span>: &#123;</span><br><span class="line">            <span class="string">"CLIENT_CLASS"</span>: <span class="string">"django_redis.client.DefaultClient"</span>,</span><br><span class="line">            <span class="string">"CONNECTION_POOL_KWARGS"</span>: &#123;<span class="string">"max_connections"</span>: <span class="number">100</span>&#125;</span><br><span class="line">            <span class="comment"># "PASSWORD": "密码",</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">from</span> django_redis <span class="keyword">import</span> get_redis_connection</span><br><span class="line">conn = get_redis_connection(<span class="string">"default"</span>)</span><br></pre></td></tr></table></figure></code></pre><h1 id="3-应用"><a href="#3-应用" class="headerlink" title="3 应用"></a>3 应用</h1><h2 id="3-1-全站应用"><a href="#3-1-全站应用" class="headerlink" title="3.1 全站应用"></a>3.1 全站应用</h2><p>使用中间件，经过一系列的认证等操作，如果内容在缓存中存在，则使用FetchFromCacheMiddleware获取内容并返回给用户，当返回给用户之前，判断缓存中是否已经存在，如果不存在则UpdateCacheMiddleware会将缓存保存至缓存，从而实现全站缓存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'django.middleware.cache.UpdateCacheMiddleware'</span>,</span><br><span class="line">    <span class="comment"># 其他中间件...</span></span><br><span class="line">    <span class="string">'django.middleware.cache.FetchFromCacheMiddleware'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">CACHE_MIDDLEWARE_ALIAS = <span class="string">""</span></span><br><span class="line">CACHE_MIDDLEWARE_SECONDS = <span class="string">""</span></span><br><span class="line">CACHE_MIDDLEWARE_KEY_PREFIX = <span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-单独视图缓存"><a href="#3-2-单独视图缓存" class="headerlink" title="3.2 单独视图缓存"></a>3.2 单独视图缓存</h2><ul>
+<li><p>方式一：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views.decorators.cache <span class="keyword">import</span> cache_page</span><br><span class="line"></span><br><span class="line"><span class="meta">@cache_page(60 * 15)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_view</span><span class="params">(request)</span>:</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views.decorators.cache <span class="keyword">import</span> cache_page</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^foo/([0-9]&#123;1,2&#125;)/$'</span>, cache_page(<span class="number">60</span> * <span class="number">15</span>)(my_view)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-3-局部使用缓存"><a href="#3-3-局部使用缓存" class="headerlink" title="3.3 局部使用缓存"></a>3.3 局部使用缓存</h2><ul>
+<li><ol>
+<li>引入TemplateTag<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load cache %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>使用缓存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cache 5000 缓存key %&#125;</span><br><span class="line">    缓存内容</span><br><span class="line">&#123;% endcache %&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="4-写一个缓存小例子"><a href="#4-写一个缓存小例子" class="headerlink" title="4 写一个缓存小例子"></a>4 写一个缓存小例子</h1><ul>
+<li><p>views.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> django.views.decorators.cache <span class="keyword">import</span> cache_page</span><br><span class="line"><span class="meta">@cache_page(5) # 视图函数缓存，5 单位为秒，缓存5秒</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cache</span><span class="params">(request)</span>:</span></span><br><span class="line">    ctime = time.time()</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'cache.html'</span>,&#123;<span class="string">'ctime'</span>:ctime&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cache.html</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load cache %&#125;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; ctime &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; ctime &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% cache 5 k1 %&#125; <span class="comment">&lt;!--更细的某个html标签缓存--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; ctime &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% endcache %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="5-更多"><a href="#5-更多" class="headerlink" title="5 更多"></a>5 更多</h1><p><a href="https://docs.djangoproject.com/en/1.9/topics/cache/" target="_blank" rel="noopener">https://docs.djangoproject.com/en/1.9/topics/cache/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/缓存.html" data-id="ck34ul53y000h78urdrazpob8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

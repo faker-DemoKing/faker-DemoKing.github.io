@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>信号 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.简介Django中提供了“信号调度”，用于在框架执行操作时解耦。通俗来讲，就是一些动作发生的时候，信号允许特定的发送者去提醒一些接受者。 1.1 Django自带信号123456789101112131415161718192021Model signals    pre_init                    # django的model执行其构造方法前，自动触发    post_i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="信号">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/信号.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.简介Django中提供了“信号调度”，用于在框架执行操作时解耦。通俗来讲，就是一些动作发生的时候，信号允许特定的发送者去提醒一些接受者。 1.1 Django自带信号123456789101112131415161718192021Model signals    pre_init                    # django的model执行其构造方法前，自动触发    post_i">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T19:52:51.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信号">
+<meta name="twitter:description" content="1.简介Django中提供了“信号调度”，用于在框架执行操作时解耦。通俗来讲，就是一些动作发生的时候，信号允许特定的发送者去提醒一些接受者。 1.1 Django自带信号123456789101112131415161718192021Model signals    pre_init                    # django的model执行其构造方法前，自动触发    post_i">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/信号.html" class="article-date">
+  <time datetime="2019-11-18T19:52:37.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      信号
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h1><p>Django中提供了“信号调度”，用于在框架执行操作时解耦。通俗来讲，就是一些动作发生的时候，信号允许特定的发送者去提醒一些接受者。</p>
+<h1 id="1-1-Django自带信号"><a href="#1-1-Django自带信号" class="headerlink" title="1.1 Django自带信号"></a>1.1 Django自带信号</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Model signals</span><br><span class="line">    pre_init                    <span class="comment"># django的model执行其构造方法前，自动触发</span></span><br><span class="line">    post_init                   <span class="comment"># django的model执行其构造方法后，自动触发</span></span><br><span class="line">    pre_save                    <span class="comment"># django的model对象保存前，自动触发</span></span><br><span class="line">    post_save                   <span class="comment"># django的model对象保存后，自动触发</span></span><br><span class="line">    pre_delete                  <span class="comment"># django的model对象删除前，自动触发</span></span><br><span class="line">    post_delete                 <span class="comment"># django的model对象删除后，自动触发</span></span><br><span class="line">    m2m_changed                 <span class="comment"># django的model中使用m2m字段操作第三张表（add,remove,clear）前后，自动触发</span></span><br><span class="line">    class_prepared              <span class="comment"># 程序启动时，检测已注册的app中modal类，对于每一个类，自动触发</span></span><br><span class="line">Management signals</span><br><span class="line">    pre_migrate                 <span class="comment"># 执行migrate命令前，自动触发</span></span><br><span class="line">    post_migrate                <span class="comment"># 执行migrate命令后，自动触发</span></span><br><span class="line">Request/response signals</span><br><span class="line">    request_started             <span class="comment"># 请求到来前，自动触发</span></span><br><span class="line">    request_finished            <span class="comment"># 请求结束后，自动触发</span></span><br><span class="line">    got_request_exception       <span class="comment"># 请求异常后，自动触发</span></span><br><span class="line">Test signals</span><br><span class="line">    setting_changed             <span class="comment"># 使用test测试修改配置文件时，自动触发</span></span><br><span class="line">    template_rendered           <span class="comment"># 使用test测试渲染模板时，自动触发</span></span><br><span class="line">Database Wrappers</span><br><span class="line">    connection_created          <span class="comment"># 创建数据库连接时，自动触发</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="1-2-自定义信号"><a href="#1-2-自定义信号" class="headerlink" title="1.2 自定义信号"></a>1.2 自定义信号</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import django.dispatch</span><br><span class="line">signal_da = django.dispatch.Signal(providing_args=[&quot;toppings&quot;, &quot;size&quot;]) # 创建信号</span><br><span class="line">def callback(sender,**kwargs)</span><br><span class="line">    pass # 触发信号后执行的函数</span><br><span class="line">signal_da.connect(callback) # 注册函数到信号里</span><br><span class="line">from 路径 import pizza_done</span><br><span class="line">pizza_done.send(sender=&apos;seven&apos;,toppings=123, size=456) # 触发信号</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-更多"><a href="#2-更多" class="headerlink" title="2 更多"></a>2 更多</h1><p><a href="https://docs.djangoproject.com/en/dev/topics/signals/" target="_blank" rel="noopener">https://docs.djangoproject.com/en/dev/topics/signals/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/信号.html" data-id="ck34ul53x000g78urrjfirk9i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
