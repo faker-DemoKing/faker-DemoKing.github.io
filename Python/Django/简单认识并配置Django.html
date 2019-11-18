@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Faker">
 <meta property="og:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T19:08:49.563Z">
+<meta property="og:updated_time" content="2019-11-18T19:09:59.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单认识并配置Django">
 <meta name="twitter:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
@@ -101,19 +101,19 @@
 <li>wsgi     #遵循WSGI规范，默认用wsgi，但是一般不用，都是用uwsgi </li>
 <li>manage.py    # 管理Django程序</li>
 </ul>
-<h2 id="1-3-Django的APP及目录介绍"><a href="#1-3-Django的APP及目录介绍" class="headerlink" title="1.3 Django的APP及目录介绍"></a>1.3 Django的APP及目录介绍</h2><pre><code>APP就是一个项目的一些功能模块</code></pre><h3 id="1-4-1创建一个APP"><a href="#1-4-1创建一个APP" class="headerlink" title="1.4.1创建一个APP"></a>1.4.1创建一个APP</h3><pre><code>python manage.py startapp cmdb  # 创建一个名cmdb的APP
+<h2 id="1-3-Django的APP及目录介绍"><a href="#1-3-Django的APP及目录介绍" class="headerlink" title="1.3 Django的APP及目录介绍"></a>1.3 Django的APP及目录介绍</h2><pre><code>APP就是一个项目的一些功能模块</code></pre><h3 id="1-3-1创建一个APP"><a href="#1-3-1创建一个APP" class="headerlink" title="1.3.1创建一个APP"></a>1.3.1创建一个APP</h3><pre><code>python manage.py startapp cmdb  # 创建一个名cmdb的APP
 * cmdb              # app目录
    * migrations     # 数据修改表结构的目录
    * admin.py       # Django为我们提供的后台管理
    * apps.py        # 配置当前app
    * models.py      # ORM，写指定的类通过命令创建数据库结构
    * tests.py       # 单元测试
-   * views          # 业务代码</code></pre><h3 id="1-4-2-模板路径"><a href="#1-4-2-模板路径" class="headerlink" title="1.4.2 模板路径"></a>1.4.2 模板路径</h3><ul>
+   * views          # 业务代码</code></pre><h3 id="1-3-2-模板路径"><a href="#1-3-2-模板路径" class="headerlink" title="1.3.2 模板路径"></a>1.3.2 模板路径</h3><ul>
 <li>打开settings.py，找到以下的文字    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line"><span class="string">'BACKEND'</span>: <span class="string">'django.template.backends.django.DjangoTemplates'</span>,</span><br><span class="line"><span class="string">'DIRS'</span>: [os.path.join(BASE_DIR),<span class="string">'templates'</span>],<span class="comment"># 注意修改这里，</span></span><br><span class="line"><span class="string">'APP_DIRS'</span>: <span class="literal">True</span>,</span><br><span class="line"><span class="string">'OPTIONS'</span>: &#123;</span><br><span class="line"><span class="string">'context_processors'</span>: [</span><br><span class="line"><span class="string">'django.template.context_processors.debug'</span>,</span><br><span class="line"><span class="string">'django.template.context_processors.request'</span>,</span><br><span class="line"><span class="string">'django.contrib.auth.context_processors.auth'</span>,</span><br><span class="line"><span class="string">'django.contrib.messages.context_processors.messages'</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h3 id="1-4-3-配置静态目录"><a href="#1-4-3-配置静态目录" class="headerlink" title="1.4.3 配置静态目录"></a>1.4.3 配置静态目录</h3><ul>
+<h3 id="1-3-3-配置静态目录"><a href="#1-3-3-配置静态目录" class="headerlink" title="1.3.3 配置静态目录"></a>1.3.3 配置静态目录</h3><ul>
 <li><p>settings.py</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">os.path.join(BASE_DIR,<span class="string">'static'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
