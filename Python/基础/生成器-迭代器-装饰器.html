@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>生成器-迭代器-装饰器 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.装饰器 定义  给其他函数装饰(添加附加功能)的函数   原则  1.不能修改被装饰的函数的源代码。2.不能修改北庄施的函数的调用方式   实现所需要求  1.函数即便量2.高阶函数3.嵌套函数    所以 高阶函数+嵌套函数=&amp;gt; 装饰器  匿名函数:   1234f = lambda x:x+1print(f(1))&amp;gt;&amp;gt;&amp;gt;2#匿名函数比起正常函数，不需要指定函数名">
+<meta property="og:type" content="website">
+<meta property="og:title" content="生成器-迭代器-装饰器">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/基础/生成器-迭代器-装饰器.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.装饰器 定义  给其他函数装饰(添加附加功能)的函数   原则  1.不能修改被装饰的函数的源代码。2.不能修改北庄施的函数的调用方式   实现所需要求  1.函数即便量2.高阶函数3.嵌套函数    所以 高阶函数+嵌套函数=&amp;gt; 装饰器  匿名函数:   1234f = lambda x:x+1print(f(1))&amp;gt;&amp;gt;&amp;gt;2#匿名函数比起正常函数，不需要指定函数名">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:34:09.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成器-迭代器-装饰器">
+<meta name="twitter:description" content="1.装饰器 定义  给其他函数装饰(添加附加功能)的函数   原则  1.不能修改被装饰的函数的源代码。2.不能修改北庄施的函数的调用方式   实现所需要求  1.函数即便量2.高阶函数3.嵌套函数    所以 高阶函数+嵌套函数=&amp;gt; 装饰器  匿名函数:   1234f = lambda x:x+1print(f(1))&amp;gt;&amp;gt;&amp;gt;2#匿名函数比起正常函数，不需要指定函数名">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/基础/生成器-迭代器-装饰器.html" class="article-date">
+  <time datetime="2019-11-18T18:28:18.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      生成器-迭代器-装饰器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-装饰器"><a href="#1-装饰器" class="headerlink" title="1.装饰器"></a>1.装饰器</h1><ul>
+<li><p>定义</p>
+<blockquote>
+<p>给其他函数装饰(添加附加功能)的函数</p>
+</blockquote>
+</li>
+<li><p>原则</p>
+<blockquote>
+<p>1.不能修改被装饰的函数的源代码。<br>2.不能修改北庄施的函数的调用方式</p>
+</blockquote>
+</li>
+<li><p>实现所需要求</p>
+<blockquote>
+<p>1.函数即便量<br>2.高阶函数<br>3.嵌套函数</p>
+</blockquote>
+<p>  所以 高阶函数+嵌套函数=&gt; 装饰器</p>
+</li>
+<li><p>匿名函数:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x:x+<span class="number">1</span></span><br><span class="line">print(f(<span class="number">1</span>))</span><br><span class="line">&gt;&gt;&gt;<span class="number">2</span></span><br><span class="line"><span class="comment">#匿名函数比起正常函数，不需要指定函数名</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套函数:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span><span class="params">()</span>:</span></span><br><span class="line">   x = <span class="number">2</span></span><br><span class="line">   print(x)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">b</span><span class="params">()</span>:</span></span><br><span class="line">       x = <span class="number">3</span></span><br><span class="line">       print(x)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">c</span><span class="params">()</span>:</span></span><br><span class="line">           x = <span class="number">4</span></span><br><span class="line">           print(x)</span><br><span class="line">       c()</span><br><span class="line">   b()</span><br><span class="line">a()</span><br><span class="line">&gt;&gt;&gt;<span class="number">2</span></span><br><span class="line">    <span class="number">3</span></span><br><span class="line">    <span class="number">4</span></span><br><span class="line"><span class="comment">#嵌套函数调用要一层一层的调用，如果b没有调用那么只会打印"2"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>举一个简单的装饰器例子：</p>
+<ul>
+<li><p>学渣版：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(*args,**kwargs)</span>:</span>      <span class="comment">#非固定参数传入</span></span><br><span class="line">        start_time = time.time()  <span class="comment">#计算开始时间</span></span><br><span class="line">        func(*args,**kwargs)            <span class="comment">#运行test1</span></span><br><span class="line">        stop_time = time.time()   <span class="comment">#计算结束时间</span></span><br><span class="line">    print(<span class="string">"运行时间为%s"</span> % (start_time-stop_time)) <span class="comment">#"deco"装饰器的作用-计算test1的运行时间</span></span><br><span class="line"><span class="keyword">return</span> deco</span><br><span class="line"><span class="meta">@timer   #还有一种调用方式，test1=timer(test1)，但是这种比较麻烦还是推荐这种，你要装饰哪一个函数就在哪一个函数头部引用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(a,b)</span>:</span>  </span><br><span class="line">    time.sleep(<span class="number">3</span>)  <span class="comment">#三秒后运行</span></span><br><span class="line">    print(<span class="string">"in the test1:%s %s"</span> % (a,b))  </span><br><span class="line">test1(<span class="string">"123"</span>,<span class="string">"234"</span>)  <span class="comment">#并没有改变函数的调用方式和源代码 </span></span><br><span class="line">&gt;&gt;&gt;<span class="keyword">in</span> the test1:<span class="number">123</span> <span class="number">234</span></span><br><span class="line">运行时间为<span class="number">-3.0027999877929688</span></span><br><span class="line">这样应该就明白装饰器的作用了</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>学霸版：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">user,passwd = <span class="string">'user'</span>,<span class="string">'123'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auth</span><span class="params">(func)</span>:</span>             <span class="comment">#这里假装我们有两个页面需要验证，这个函数用来验证</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kwargs)</span>:</span>        </span><br><span class="line">        username = input(<span class="string">"Please your username:"</span>)</span><br><span class="line">    password = input(<span class="string">"Please your password"</span>)</span><br><span class="line">    <span class="keyword">if</span> user == username <span class="keyword">and</span> passwd == password:</span><br><span class="line">        print(<span class="string">"Hello world!"</span>)</span><br><span class="line">        func(*args,**kwargs)   <span class="comment">#开始运行传入的函数</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        exit(<span class="string">"gun"</span>)</span><br><span class="line"><span class="keyword">return</span> wrapper                      <span class="comment">#返回结果</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LOL</span><span class="params">()</span>:</span></span><br><span class="line">print(<span class="string">"in the LOL"</span>)</span><br><span class="line"><span class="meta">@auth</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LPL</span><span class="params">()</span>:</span></span><br><span class="line">print(<span class="string">"in the LPL"</span>)</span><br><span class="line"><span class="meta">@auth</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LCK</span><span class="params">()</span>:</span></span><br><span class="line">print(<span class="string">"in the LCK"</span>)  </span><br><span class="line">LOL()</span><br><span class="line">LPL()</span><br><span class="line">LCK()  <span class="comment">#后面则是"LPL"，“LCK”需要验证。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>学霸进阶版（这就是学渣和学霸的区别，一道题学渣考虑的是能不能做出来，而学霸考虑的是用几种方法做出来！！！）</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">user,passwd = <span class="string">'user'</span>,<span class="string">'123'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auth</span><span class="params">(auth_type)</span>:</span></span><br><span class="line">    print(<span class="string">"\033[32;1m%s\033[0m"</span>% auth_type)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">           print(<span class="string">"wrapper func args"</span>,*args,**kwargs)</span><br><span class="line">            username = input(<span class="string">"Please your username:"</span>)</span><br><span class="line">            password = input(<span class="string">"Please your password:"</span>)</span><br><span class="line">            <span class="keyword">if</span> user == username <span class="keyword">and</span> passwd == password:</span><br><span class="line">                print(<span class="string">"Hello world!"</span>)</span><br><span class="line">                res = func(*args,**kwargs)</span><br><span class="line">                <span class="keyword">return</span> res</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                exit(<span class="string">"gun"</span>)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> outer</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LOL</span><span class="params">()</span>:</span></span><br><span class="line">   print(<span class="string">"in the LOL"</span>)</span><br><span class="line"><span class="meta">@auth(auth_type="local")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LPL</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"in the LPL"</span>)</span><br><span class="line"><span class="meta">@auth(auth_type="ldap")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LCK</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"in the LCK"</span>)</span><br><span class="line">LOL()</span><br><span class="line">LPL()</span><br><span class="line">LCK()</span><br><span class="line">&gt;&gt;&gt;local</span><br><span class="line">ldap</span><br><span class="line"><span class="keyword">in</span> the LOL</span><br><span class="line">wrapper func args</span><br><span class="line">Please your username:zhaoyue</span><br><span class="line">Please your password:woaini</span><br><span class="line">Hello world!</span><br><span class="line"><span class="keyword">in</span> the LPL</span><br><span class="line">wrapper func args</span><br><span class="line">Please your username:zhaoyue</span><br><span class="line">Please your password:woaini</span><br><span class="line">Hello world!</span><br><span class="line"><span class="keyword">in</span> the LCK</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-生成器"><a href="#2-生成器" class="headerlink" title="2.生成器"></a>2.生成器</h1><ul>
+<li><p>现在有个需求：有列表[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]，要求把每个值加一并打印</p>
+<ul>
+<li><p>你可能有两种方式：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">b = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    b.append(i+<span class="number">1</span>)</span><br><span class="line">print(b)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>还有就是原值修改。。太low这里就不写了</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>那么我们用生成器怎么写呢？</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a = [i+<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">print(a)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">其实真正的生成器应该去掉[]改成()，这样它就会在你调用的时候才会出现值。举个栗子：</span><br><span class="line">b = (i*<span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000000</span>))</span><br><span class="line">print(b)</span><br><span class="line">print(b.__next__())               <span class="comment">#生成器的调用方式只有这一种b.__next__()，而且只能有一个一个的调用</span></span><br><span class="line">print(b.__next__())</span><br><span class="line">&gt;&gt;&gt;&lt;generator object &lt;genexpr&gt; at <span class="number">0x00000000023AA5C8</span>&gt;<span class="comment">#这里出现个"gencerator"，就是生成器的意思</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="comment">#这样一个一个调用显得麻烦，所以：</span></span><br><span class="line">b = (i*<span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000000</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3000</span>:  <span class="comment">#取值3000次</span></span><br><span class="line">        print(i)</span><br><span class="line">print(i)              <span class="comment">#最后i的值</span></span><br><span class="line"><span class="number">3000</span></span><br><span class="line"><span class="number">2999997</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>斐波那契数列 </p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">在数学上有一个斐波那契数列，除了前面两个数，任意一个数都是整数前面两个数的相加</span><br><span class="line"><span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">13</span>,<span class="number">21</span>,<span class="number">34</span>,<span class="number">55.</span>.... </span><br><span class="line">这里其实我们可以用生成器的方式去显示:   </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n,a,b = <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt;max:</span><br><span class="line">       a,b = b,a+b</span><br><span class="line">       print(a,b)</span><br><span class="line">       n += <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="string">"done"</span></span><br><span class="line">fib(<span class="number">15</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">5</span></span><br><span class="line"><span class="number">5</span> <span class="number">8</span></span><br><span class="line"><span class="number">8</span> <span class="number">13</span></span><br><span class="line"><span class="number">13</span> <span class="number">21</span></span><br><span class="line"><span class="number">21</span> <span class="number">34</span></span><br><span class="line"><span class="number">34</span> <span class="number">55</span></span><br><span class="line"><span class="number">55</span> <span class="number">89</span></span><br><span class="line"><span class="number">89</span> <span class="number">144</span></span><br><span class="line"><span class="number">144</span> <span class="number">233</span></span><br><span class="line"><span class="number">233</span> <span class="number">377</span></span><br><span class="line"><span class="number">377</span> <span class="number">610</span></span><br><span class="line"><span class="number">610</span> <span class="number">987</span></span><br><span class="line">诶。。。其实这里我们还离真正真正的生成器就差一步</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n,a,b = <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line">   <span class="keyword">while</span> n &lt;max:</span><br><span class="line">        a,b = b,a+b</span><br><span class="line">       <span class="comment"># print(a,b)</span></span><br><span class="line">       <span class="keyword">yield</span> a,b                         <span class="comment">#将print改成yield</span></span><br><span class="line">       n += <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="string">"done"</span></span><br><span class="line">f_gen = fib(<span class="number">15</span>)</span><br><span class="line">print(f_gen.__next__())</span><br><span class="line">print(<span class="string">"Hello world"</span>)</span><br><span class="line">print(f_gen.__next__())</span><br><span class="line">print(f_gen.__next__())</span><br><span class="line">print(<span class="string">"Bye world"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f_gen:</span><br><span class="line">    print(i)</span><br><span class="line">&gt;&gt;&gt;(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">Hello world</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">Bye world</span><br><span class="line">(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">(<span class="number">5</span>, <span class="number">8</span>)</span><br><span class="line">(<span class="number">8</span>, <span class="number">13</span>)</span><br><span class="line">(<span class="number">13</span>, <span class="number">21</span>)</span><br><span class="line">(<span class="number">21</span>, <span class="number">34</span>)</span><br><span class="line">(<span class="number">34</span>, <span class="number">55</span>)</span><br><span class="line">(<span class="number">55</span>, <span class="number">89</span>)</span><br><span class="line">(<span class="number">89</span>, <span class="number">144</span>)</span><br><span class="line">(<span class="number">144</span>, <span class="number">233</span>)</span><br><span class="line">(<span class="number">233</span>, <span class="number">377</span>)</span><br><span class="line">(<span class="number">377</span>, <span class="number">610</span>)</span><br><span class="line">(<span class="number">610</span>, <span class="number">987</span>)</span><br><span class="line"><span class="comment">#这样生成器就算完成了，取值的时候可以从生成器中出来干别的，也可以随时进去，这样不会从头开始，取值取到哪里就卡在哪里</span></span><br><span class="line">但是用<span class="keyword">for</span>循环调用generator时，发现拿不到generator的<span class="keyword">return</span>语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中：</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n,a,b = <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt;max:</span><br><span class="line">        a,b = b,a+b</span><br><span class="line">        <span class="comment"># print(a,b)</span></span><br><span class="line">        <span class="keyword">yield</span> a,b                         </span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"done"</span></span><br><span class="line">f_gen = fib(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> next(f_gen):</span><br><span class="line">        print(i)                 <span class="comment">#这样肯定会报"StopIteration",所以我们用try来捕获这个错误</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x = next(f_gen)</span><br><span class="line">        print(<span class="string">'f_gen:'</span>,x)</span><br><span class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:     <span class="comment">#捕获错误</span></span><br><span class="line">        print(<span class="string">"Gen return value:"</span>,e.value)  <span class="comment">#打印错误的返回值</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还可以使用yield实现在单线程的情况下并发运算</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xiaofeizhe</span><span class="params">(name)</span>:</span>             <span class="comment">#不要在意这里的英文"消费者"</span></span><br><span class="line">    print(<span class="string">'%s准备吃包子了'</span>%name)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">       baozi = <span class="keyword">yield</span>                              <span class="comment">#yield就是你要把什么传到外面就写什么</span></span><br><span class="line">       print(<span class="string">"包子[%s]被[%s]吃了"</span>%(baozi,name ))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shangjia</span><span class="params">()</span>:</span>                      <span class="comment">#还有这里的"商家"英文也不要在意</span></span><br><span class="line">    x1 = xiaofeizhe(<span class="string">'A'</span>)           <span class="comment">#给"xiofeizhe(name)"传值</span></span><br><span class="line">    x2 =  xiaofeizhe(<span class="string">'B'</span>)          <span class="comment">#给"xiofeizhe(name)"传值</span></span><br><span class="line">    x1.__next__()</span><br><span class="line">    x2.__next__()</span><br><span class="line">    print(<span class="string">"做包子ING"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):           <span class="comment">#循环10次把每次循环的数传给"baozi"（言外之意就是"send"可以给"yield"传值）</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        x1.send(i)</span><br><span class="line">        x2.send(i)        </span><br><span class="line">shangjia()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="3-迭代器"><a href="#3-迭代器" class="headerlink" title="3.迭代器"></a>3.迭代器</h1><p>到现在，可以直接for循环的数据类型有:<code>list</code>，<code>dict</code>，<code>set</code>，<code>str</code>还有刚学的生成器<code>generatior</code><br>这些可以直接for循环的对象被称为迭代器：<code>Iterable</code><br>可以使用<code>isinstance()</code>判断一个对象是否是Iterable对象：</p>
+<ul>
+<li>判断  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable</span><br><span class="line">print(isinstance([],Iterable))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">True</span></span><br><span class="line">print(isinstance(<span class="string">'str'</span>,Iterable))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">True</span></span><br><span class="line">print(isinstance(&#123;&#125;,Iterable))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">True</span></span><br><span class="line">print(isinstance(<span class="number">1</span>,Iterable))</span><br><span class="line">&gt;&gt;&gt;Flase</span><br><span class="line">a=(i*<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line">print(isinstance(a,Iterable))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<p>而生成器不但可以作用于for循环，还可以被next()函数不断调用并返回下一个值，直到最后抛出StopIteration错误表示无法继续返回下一个值了<br>可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterator</span><br><span class="line">print(isinstance([],Iterator))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">False</span></span><br><span class="line">print(isinstance(<span class="string">'str'</span>,Iterator))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">False</span></span><br><span class="line">print(isinstance(&#123;&#125;,Iterator))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">False</span></span><br><span class="line">print(isinstance(<span class="number">1</span>,Iterator))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">False</span></span><br><span class="line">a=(i*<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line">print(isinstance(a,Iterator))</span><br><span class="line">&gt;&gt;&gt;<span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>也就是说，list，dict，set，str这种数据类型是Iterable，Iterator对象可以被next()函数调用并不断返回下一个数据</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/基础/生成器-迭代器-装饰器.html" data-id="ck34rrxpn000fn0ur2ft744es" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
