@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>函数 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 什么是函数函数函数一词来源于数学，但编程中的[函数]概念，与数学中的函数是有很大不同的，具体区别，我们后面会讲，编程中的函数在英文中也有很多不同的叫法。在BASIC中叫做subroutine(子过程或子程序)，在Pascal中叫做procedure(过程)和function，在C中只有function，在Java里面叫做method。定义: 函数是指将一组语句的集合通过一个名字(函数名)封装">
+<meta property="og:type" content="website">
+<meta property="og:title" content="函数">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/基础/函数.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1. 什么是函数函数函数一词来源于数学，但编程中的[函数]概念，与数学中的函数是有很大不同的，具体区别，我们后面会讲，编程中的函数在英文中也有很多不同的叫法。在BASIC中叫做subroutine(子过程或子程序)，在Pascal中叫做procedure(过程)和function，在C中只有function，在Java里面叫做method。定义: 函数是指将一组语句的集合通过一个名字(函数名)封装">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:26:49.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数">
+<meta name="twitter:description" content="1. 什么是函数函数函数一词来源于数学，但编程中的[函数]概念，与数学中的函数是有很大不同的，具体区别，我们后面会讲，编程中的函数在英文中也有很多不同的叫法。在BASIC中叫做subroutine(子过程或子程序)，在Pascal中叫做procedure(过程)和function，在C中只有function，在Java里面叫做method。定义: 函数是指将一组语句的集合通过一个名字(函数名)封装">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/基础/函数.html" class="article-date">
+  <time datetime="2019-11-18T17:41:51.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-什么是函数函数"><a href="#1-什么是函数函数" class="headerlink" title="1. 什么是函数函数"></a>1. 什么是函数函数</h1><p>函数一词来源于数学，但编程中的<code>[函数]</code>概念，与数学中的函数是有很大不同的，具体区别，我们后面会讲，编程中的函数在英文中也有很多不同的叫法。在BASIC中叫做<code>subroutine</code>(子过程或子程序)，在Pascal中叫做<code>procedure</code>(过程)和<code>function</code>，在C中只有<code>function</code>，在Java里面叫做<code>method</code>。<br>定义: 函数是指将一组语句的集合通过一个名字(函数名)封装起来，要想执行这个函数，只需调用其函数名即可</p>
+<ul>
+<li><p>特性:</p>
+<ul>
+<li>减少重复代码</li>
+<li>使程序变的可扩展</li>
+<li>使程序变得易维护</li>
+</ul>
+</li>
+<li><p>基础语法：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span>    <span class="comment">#定义名字</span></span><br><span class="line">    print(<span class="string">'Hello world'</span>)</span><br><span class="line">fun()            <span class="comment">#调用</span></span><br><span class="line">&gt;&gt;&gt;Hello world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>带形参</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int</span><span class="params">(x,y)</span>:</span>        <span class="comment">#形参(x,y)</span></span><br><span class="line">    print(x,y)</span><br><span class="line">int(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="number">1</span> <span class="number">2</span>               <span class="comment">#实参(1,2)，与形参一一对应</span></span><br><span class="line"><span class="comment"># 形参:变量只有在被调用时才分配内存单元，在调用结束时，即刻释放所分配的内存单元。因此，形参只在函数内部有效。函数调用结束返回主调用函数后则不能再使用该形参变量</span></span><br><span class="line"><span class="comment"># 实参:可以是常量、变量、表达式、函数等，无论实参是何种类型的量，在进行函数调用时，它们都必须有确定的值，以便把这些值传送给形参。因此应预先用赋值，输入等办法使参数获得确定值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int</span><span class="params">(x,y=<span class="number">2</span>)</span>       #<span class="title">y</span>这时候就是一个默认参数，如果你不指定那么它就用默认的</span></span><br><span class="line"><span class="function">    <span class="title">print</span><span class="params">(x,y)</span></span></span><br><span class="line"><span class="function"><span class="title">int</span><span class="params">(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="function">&gt;&gt;&gt;1 2</span></span><br><span class="line"><span class="function"><span class="title">int</span><span class="params">(<span class="number">1</span>,<span class="number">10</span>)</span>&gt;&gt;&gt;1 10                   #指定了就用你指定的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关键参数：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">正常情况下，给函数传参数要按顺序，不想按顺序就可以用关键参数，只需指定参数名即可，但记住一个要求就是，关键参数必须放在位置参数之后。</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int</span><span class="params">(x,name=<span class="string">'Daniel'</span>,y=<span class="number">2</span>)</span>:</span> </span><br><span class="line">    print(x,y,name)</span><br><span class="line">int(<span class="number">1</span>,name=<span class="string">'faker'</span>)    </span><br><span class="line">&gt;&gt;&gt;<span class="number">1</span> <span class="number">2</span> faker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非固定参数:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int</span><span class="params">(*args)</span>:</span>                      <span class="comment">#*代表功能，后面就是变量名，也是你的形参名，可以有n个形参，在不确定形参的情况下使用，变成一个tuple,只能接受位置参数</span></span><br><span class="line">    print(args)</span><br><span class="line">int(<span class="string">'faker'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">'qwe'</span>)</span><br><span class="line">&gt;&gt;&gt;(<span class="string">'faker'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="string">'qwe'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int</span><span class="params">(**args)</span>:</span>            <span class="comment">#把关键字参数转换成字典的方式</span></span><br><span class="line">   print(args)</span><br><span class="line">    print(args[<span class="string">'name'</span>],args[<span class="string">'age'</span>])  <span class="comment">#取值与字典方式一样</span></span><br><span class="line">int(name=<span class="string">'Daniel'</span>,age=<span class="number">18</span>)</span><br><span class="line">&gt;&gt;&gt;&#123;<span class="string">'name'</span>: <span class="string">'Daniel'</span>, <span class="string">'age'</span>: <span class="number">18</span>&#125;</span><br><span class="line">&gt;&gt;&gt;Daniel <span class="number">18</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>局部变量：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'Dnaiel'</span>           <span class="comment">#这是一个全局变量，就是一级</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span><span class="params">()</span>:</span></span><br><span class="line">    name = <span class="string">'Strak'</span>           <span class="comment">#这是一个局部变量只能在这个函数里用，不会影响到全局</span></span><br><span class="line">    print(name)</span><br><span class="line">change_name() <span class="number">7</span> &gt;&gt;&gt;Stark <span class="number">8</span> print(name)　　　　　　　　　　　</span><br><span class="line">&gt;&gt;&gt;Daniel10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想要在函数里修改全局变量请看下文</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'Daniel'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> name                 <span class="comment">#global&gt;全局的意思</span></span><br><span class="line">    name = <span class="string">'Strak'</span> </span><br><span class="line">    print(name,)</span><br><span class="line">change_name()</span><br><span class="line">&gt;&gt;&gt;Stark</span><br><span class="line"><span class="keyword">print</span> (name)</span><br><span class="line">&gt;&gt;&gt;Stark</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>递归：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x)</span><br><span class="line">     <span class="keyword">if</span> int(x/<span class="number">2</span>) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    <span class="keyword">return</span> fun(int(x/<span class="number">2</span>))</span><br><span class="line">fun(<span class="number">100</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="number">100</span></span><br><span class="line">　　<span class="number">50</span></span><br><span class="line">　　<span class="number">25</span></span><br><span class="line">　　<span class="number">12</span></span><br><span class="line">　　<span class="number">6</span></span><br><span class="line">　　<span class="number">3</span></span><br><span class="line">　　<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数式编程介绍</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> 函数是Python内建支持的一种封装，我们通过把大段代码拆成函数，通过一层一层的函数调用，就可以把复杂任务分解成简单的任务，这种分解可以称之为面向过程的程序设计。函数就是面向过程的程序设计的基本单元。</span><br><span class="line"> 函数式编程中的函数这个术语不是指计算机中的函数（实际上是Subroutine），而是指数学中的函数，即自变量的映射。也就是说一个函数的值仅决定于函数参数的值，不依赖其他状态。比如sqrt(x)函数计算x的平方根，只要x不变，不论什么时候调用，调用几次，值都是不变的。</span><br><span class="line"> </span><br><span class="line"> Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</span><br><span class="line"> </span><br><span class="line"> 高阶函数：</span><br><span class="line"> 变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</span><br><span class="line"> 把一个函数名当做实参传给另外一个函数，返回值中包含函数名。</span><br><span class="line"> def add(x,y,f):</span><br><span class="line">     return f(x) + f(y)</span><br><span class="line">res = add(3,-6,abs)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内置函数：</p>
+</li>
+</ul>
+<ul>
+<li><strong><a href="https://docs.python.org/3/library/functions.html?highlight=built#ascii" target="_blank" rel="noopener">内置函数详解</a></strong></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/基础/函数.html" data-id="ck34rgjq4000bogur0mbbmf1n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
