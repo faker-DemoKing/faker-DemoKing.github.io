@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>简单认识并配置Django | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
+<meta property="og:type" content="website">
+<meta property="og:title" content="简单认识并配置Django">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/简单认识并配置Django.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:51:05.665Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单认识并配置Django">
+<meta name="twitter:description" content="1 简介web框架 1.1 Django工程创建12python django-admin startproject project1 # project1 是项目名字，可自定义python manage.py runserver # 运行程序  1.2 功能目录介绍 mysite # 与项目名一样，主要用于对整个程序的配置 init settings # 配置文件 url       # url">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/简单认识并配置Django.html" class="article-date">
+  <time datetime="2019-11-18T18:49:31.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简单认识并配置Django
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>web框架</p>
+<h2 id="1-1-Django工程创建"><a href="#1-1-Django工程创建" class="headerlink" title="1.1 Django工程创建"></a>1.1 Django工程创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python django-admin startproject project1 # project1 是项目名字，可自定义</span><br><span class="line">python manage.py runserver # 运行程序</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-功能目录介绍"><a href="#1-2-功能目录介绍" class="headerlink" title="1.2 功能目录介绍"></a>1.2 功能目录介绍</h2><ul>
+<li>mysite # 与项目名一样，主要用于对整个程序的配置</li>
+<li>init</li>
+<li>settings # 配置文件</li>
+<li>url       # url对应关系</li>
+<li>wsgi     #遵循WSGI规范，默认用wsgi，但是一般不用，都是用uwsgi </li>
+<li>manage.py    # 管理Django程序<h2 id="1-3-Django的APP及目录介绍"><a href="#1-3-Django的APP及目录介绍" class="headerlink" title="1.3 Django的APP及目录介绍"></a>1.3 Django的APP及目录介绍</h2>  APP就是一个项目的一些功能模块<h3 id="1-4-1创建一个APP"><a href="#1-4-1创建一个APP" class="headerlink" title="1.4.1创建一个APP"></a>1.4.1创建一个APP</h3>  python manage.py startapp cmdb  # 创建一个名cmdb的APP<ul>
+<li>cmdb              # app目录<ul>
+<li>migrations     # 数据修改表结构的目录</li>
+<li>admin.py       # Django为我们提供的后台管理</li>
+<li>apps.py        # 配置当前app</li>
+<li>models.py      # ORM，写指定的类通过命令创建数据库结构</li>
+<li>tests.py       # 单元测试</li>
+<li>views          # 业务代码<h3 id="1-4-2-模板路径"><a href="#1-4-2-模板路径" class="headerlink" title="1.4.2 模板路径"></a>1.4.2 模板路径</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>打开settings.py，找到以下的文字  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line"><span class="string">'BACKEND'</span>: <span class="string">'django.template.backends.django.DjangoTemplates'</span>,</span><br><span class="line"><span class="string">'DIRS'</span>: [os.path.join(BASE_DIR),<span class="string">'templates'</span>],<span class="comment"># 注意修改这里，</span></span><br><span class="line"><span class="string">'APP_DIRS'</span>: <span class="literal">True</span>,</span><br><span class="line"><span class="string">'OPTIONS'</span>: &#123;</span><br><span class="line"><span class="string">'context_processors'</span>: [</span><br><span class="line"><span class="string">'django.template.context_processors.debug'</span>,</span><br><span class="line"><span class="string">'django.template.context_processors.request'</span>,</span><br><span class="line"><span class="string">'django.contrib.auth.context_processors.auth'</span>,</span><br><span class="line"><span class="string">'django.contrib.messages.context_processors.messages'</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-4-3-配置静态目录"><a href="#1-4-3-配置静态目录" class="headerlink" title="1.4.3 配置静态目录"></a>1.4.3 配置静态目录</h3><ul>
+<li><p>settings.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">os.path.join(BASE_DIR,<span class="string">'static'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改完在html文件里直接引用就好</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">linkrel="stylesheet"</span> <span class="attr">href</span>=<span class="string">"/static/commons.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>至此django就算是配置完成了</p>
+</li>
+</ul>
+<h1 id="2-路由系统"><a href="#2-路由系统" class="headerlink" title="2 路由系统"></a>2 路由系统</h1><h2 id="2-1-djano的生命周期"><a href="#2-1-djano的生命周期" class="headerlink" title="2.1 djano的生命周期"></a>2.1 djano的生命周期</h2><p>URL对应关系（匹配）-&gt;视图函数-&gt;返回用户字符串<br>URL对应关系（匹配）-&gt;视图函数-&gt;打开一个HTML文件，读取内容返回给用  </p>
+<h2 id="2-2-路由分发"><a href="#2-2-路由分发" class="headerlink" title="2.2 路由分发"></a>2.2 路由分发</h2><ul>
+<li>路由都是通过project下的url.py来进行分发的</li>
+<li>我们可以做一个二级路由，来分发<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path(&apos;cmdb/&apos;,include(&apos;app01.urls&apos;)),</span><br><span class="line">path(&apos;jiankong/&apos;,include(&apos;app02.urls&apos;)),</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-3-自己生成url"><a href="#2-3-自己生成url" class="headerlink" title="2.3 自己生成url"></a>2.3 自己生成url</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line">v = reverse(<span class="string">'index'</span>,args=(<span class="number">90</span>,))</span><br><span class="line">args是urls定义的传参</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-基于正则表达式的url"><a href="#2-4-基于正则表达式的url" class="headerlink" title="2.4 基于正则表达式的url"></a>2.4 基于正则表达式的url</h3><ul>
+<li><p>urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'index/'</span>,views.index),</span><br><span class="line">    re_path(<span class="string">r'^detail-(\d+).html$'</span>,views.detail),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">USER_DICT = &#123;</span><br><span class="line"><span class="string">'1'</span>:&#123;<span class="string">'user'</span>:<span class="string">'root1'</span>,<span class="string">'email'</span>:<span class="string">'root1@root.com'</span>&#125;,</span><br><span class="line"><span class="string">'2'</span>:&#123;<span class="string">'user'</span>:<span class="string">'root2'</span>,<span class="string">'emai2'</span>:<span class="string">'root2@root.com'</span>&#125;,</span><br><span class="line"><span class="string">'3'</span>:&#123;<span class="string">'user'</span>:<span class="string">'root3'</span>,<span class="string">'emai3'</span>:<span class="string">'root3@root.com'</span>&#125;,</span><br><span class="line"><span class="string">'4'</span>:&#123;<span class="string">'user'</span>:<span class="string">'root4'</span>,<span class="string">'emai4'</span>:<span class="string">'root4@root.com'</span>&#125;,</span><br><span class="line"><span class="string">'5'</span>:&#123;<span class="string">'user'</span>:<span class="string">'root5'</span>,<span class="string">'emai5'</span>:<span class="string">'root5@root.com'</span>&#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span>  render(request,<span class="string">'login.html'</span>,&#123;<span class="string">'user_dict'</span>:USER_DICT&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request,nid)</span>:</span></span><br><span class="line">    print(nid)</span><br><span class="line">    detail_info = USER_DICT[nid]</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'detail.html'</span>,&#123;<span class="string">'detail_info'</span>:detail_info&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>login.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for k,row in user_dict.items %&#125; <span class="comment">&lt;!-- 显示value --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">atarget="_blank"href="</span>/<span class="attr">detail-</span>&#123;&#123; <span class="attr">k</span> &#125;&#125;<span class="attr">.html</span>"&gt;</span>&#123;&#123; row.user &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>detail.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for k,row in detail_info.items %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;k&#125;&#125;-&#123;&#123;row&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="3-模板语言"><a href="#3-模板语言" class="headerlink" title="3. 模板语言"></a>3. 模板语言</h1><h2 id="3-1-for循环"><a href="#3-1-for循环" class="headerlink" title="3.1 for循环"></a>3.1 for循环</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for item in k2 %&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">&#123;&#123; item &#125;&#125;,</span><br><span class="line">        &#123;&#123; forloop.counter &#125;&#125;,   # 索引,从1开始,类似于python中的enumerate，</span><br><span class="line">        &#123;&#123; forloop.counter0 &#125;&#125;,   # 索引,从0开始,类似于python中的enumerate，</span><br><span class="line">        &#123;&#123; forloop.first &#125;&#125;,        # 判断当前item是否是第一个元素,成立为True,不成立为False</span><br><span class="line">        &#123;&#123; forloop.last &#125;&#125;,         # 判断当前item是否是最后一个元素,成立为True,不成立为False</span><br><span class="line">        &#123;&#123; forloop.revcounter &#125;&#125;    # 倒序索引,与forloop.counter 相反</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><ul>
+<li><p><a href="https://docs.djangoproject.com/en/1.10/ref/templates/language/" target="_blank" rel="noopener">https://docs.djangoproject.com/en/1.10/ref/templates/language/</a></p>
+<h1 id="4-小例子"><a href="#4-小例子" class="headerlink" title="4 小例子"></a>4 小例子</h1><h2 id="4-1-获取多个数据"><a href="#4-1-获取多个数据" class="headerlink" title="4.1 获取多个数据"></a>4.1 获取多个数据</h2></li>
+<li><p>views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'login.html'</span>)</span><br><span class="line"><span class="keyword">elif</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">    u = request.POST.get(<span class="string">'user'</span>)</span><br><span class="line">    p = request.POST.get(<span class="string">'passwd'</span>)</span><br><span class="line">    c1 = request.POST.get(<span class="string">'choice1'</span>)</span><br><span class="line">    c2 = request.POST.getlist(<span class="string">'choice2'</span>) <span class="comment">#关键字getlist</span></span><br><span class="line">    print(u,p,c1,c2)</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'login.html'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">'/index'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>login.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPEhtml&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">htmllang="en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">metacharset="UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/login/"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">placeholder</span>=<span class="string">"用户名"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"passwd"</span> <span class="attr">placeholder</span>=<span class="string">"密码"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">男: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"choice1"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">女: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"choice1"</span> <span class="attr">value</span>=<span class="string">"2"</span>/&gt;</span></span><br><span class="line">呵呵: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"choice1"</span> <span class="attr">value</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    1: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"choice2"</span> <span class="attr">value</span>=<span class="string">"11"</span>/&gt;</span></span><br><span class="line">    2: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"choice2"</span> <span class="attr">value</span>=<span class="string">"22"</span>/&gt;</span></span><br><span class="line">    3: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"choice2"</span> <span class="attr">value</span>=<span class="string">"33"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="4-2-文件上传"><a href="#4-2-文件上传" class="headerlink" title="4.2 文件上传"></a>4.2 文件上传</h2><ul>
+<li><p>views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render,HttpResponse,redirect</span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span>  HttpResponse(<span class="string">'index'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request,<span class="string">'login.html'</span>)</span><br><span class="line">    <span class="keyword">elif</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        f_name = request.POST.get(<span class="string">'file'</span>) <span class="comment"># 只能获取文件名</span></span><br><span class="line">        obj = request.FILES.get(<span class="string">'file'</span>) <span class="comment"># 获取文件对象</span></span><br><span class="line">        f = open(obj.name,mode=<span class="string">'wb'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> obj.chunks(): <span class="comment"># 循环拿到发过来的文件,迭代器实现的</span></span><br><span class="line">        f.write(i)</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="keyword">return</span> render(request,<span class="string">'login.html'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">'/index'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/login/"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span><span class="comment">&lt;!--上传文件就要加一个enctype='..' --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">'file'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/简单认识并配置Django.html" data-id="ck34sh0ob000dogurwbwgujrd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

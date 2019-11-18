@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CBV-FBV | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FBV12345678910def auth(func):    def inner(request,*args,**kwargs):        v = request.COOKIES.get(&apos;username&apos;)        if not v:            return redirect(&apos;/login/&apos;)        return func(request,*args,*">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CBV-FBV">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/CBV-FBV.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="FBV12345678910def auth(func):    def inner(request,*args,**kwargs):        v = request.COOKIES.get(&apos;username&apos;)        if not v:            return redirect(&apos;/login/&apos;)        return func(request,*args,*">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:55:07.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CBV-FBV">
+<meta name="twitter:description" content="FBV12345678910def auth(func):    def inner(request,*args,**kwargs):        v = request.COOKIES.get(&apos;username&apos;)        if not v:            return redirect(&apos;/login/&apos;)        return func(request,*args,*">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/CBV-FBV.html" class="article-date">
+  <time datetime="2019-11-18T18:53:39.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CBV-FBV
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FBV"><a href="#FBV" class="headerlink" title="FBV"></a>FBV</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auth</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(request,*args,**kwargs)</span>:</span></span><br><span class="line">        v = request.COOKIES.get(<span class="string">'username'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> v:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">'/login/'</span>)</span><br><span class="line">        <span class="keyword">return</span> func(request,*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"><span class="meta">@auth</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'ok'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-CBV"><a href="#2-CBV" class="headerlink" title="2 CBV"></a>2 CBV</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auth</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(request,*args,**kwargs)</span>:</span></span><br><span class="line">        v = request.COOKIES.get(<span class="string">'username'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> v:</span><br><span class="line">            <span class="keyword">return</span> redirect(<span class="string">'/login/'</span>)</span><br><span class="line">        <span class="keyword">return</span> func(request,*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line"><span class="keyword">from</span> django.utils.decorators <span class="keyword">import</span> method_decorator</span><br><span class="line"><span class="meta">@method_decorator(auth,name='dispatch') # 表示给这个类里的某个方法用上装饰器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span><span class="params">(View)</span>:</span></span><br><span class="line"><span class="meta">    @method_decorator(auth) # 所有请求先走dispatch 所以给他加上，就相当于给这个类里的所有方法加上了，这个和上面那个选一个就可以,写了上面那个这个就不用写了，dispatch方法也不用写了</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(self,request,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> super(Order,self).dispatch(request,*args,**kwargs)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self,request)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'get'</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self,request)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'fuck'</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/CBV-FBV.html" data-id="ck34sh0o9000bogur23ez08ar" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
