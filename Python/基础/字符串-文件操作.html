@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Faker">
 <meta property="og:description" content="1. 字符串用法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162name = &apos;daniel&apos;print(name.capitalize())         #首字母大写&amp;gt;&amp;gt;&amp;gt;daniel">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T17:36:17.078Z">
+<meta property="og:updated_time" content="2019-11-18T17:36:54.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串-文件操作">
 <meta name="twitter:description" content="1. 字符串用法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162name = &apos;daniel&apos;print(name.capitalize())         #首字母大写&amp;gt;&amp;gt;&amp;gt;daniel">
@@ -140,8 +140,10 @@
 </ul>
 <h1 id="4-字符转编码操作："><a href="#4-字符转编码操作：" class="headerlink" title="4.字符转编码操作："></a>4.字符转编码操作：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">超级超级详细版!!!&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;http://www.cnblogs.com/yuanchenqi/articles/5956943.html</span><br><span class="line">1).在python2默认编码是ASCII, python3里默认是unicode</span><br><span class="line">2).unicode 分为 utf-32(占4个字节),utf-16(占两个字节)，utf-8(占1-4个字节)， so utf-16就是现在最常用的unicode版本， 不过在文件里存的还是utf-8，因为utf8省空间</span><br><span class="line">3).在py3中encode,在转码的同时还会把string 变成bytes类型，decode在解码的同时还会把bytes变回string</span><br></pre></td></tr></table></figure>
 
-<h1 id="5-文件操作小实例"><a href="#5-文件操作小实例" class="headerlink" title="5.文件操作小实例"></a>5.文件操作小实例</h1><h2 id="5-1-要求："><a href="#5-1-要求：" class="headerlink" title="5.1 要求："></a>5.1 要求：</h2><blockquote>
+<h1 id="5-文件操作小实例"><a href="#5-文件操作小实例" class="headerlink" title="5.文件操作小实例"></a>5.文件操作小实例</h1><blockquote>
+<h2 id="5-1-要求："><a href="#5-1-要求：" class="headerlink" title="5.1 要求："></a>5.1 要求：</h2><blockquote>
 <p>现有配置文件httpd.conf,内容如下：</p>
+</blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot    /var/www/html/</span><br><span class="line">    ServerName  www.baidu.com</span><br><span class="line">    ErrorLog    &quot;logs/baidu.com-error.log&quot;</span><br><span class="line">    CustomLog   &quot;logs/baidu.com-access.log&quot; common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">backend www.baidu.com</span><br><span class="line">    server 1.1.1.1 1.1.1.1 weight 100 maxconn 2000</span><br><span class="line">    server 2.2.2.2 2.2.2.2 weight 100 maxconn 2000</span><br><span class="line">backend www.sina.com</span><br><span class="line">    server 3.3.3.3 3.3.3.3 weight 100 maxconn 3000</span><br><span class="line">    server 4.4.4.4 4.4.4.4 weight 100 maxconn 3000</span><br></pre></td></tr></table></figure>
 
