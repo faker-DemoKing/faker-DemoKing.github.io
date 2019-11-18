@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>modelform | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1基本使用 Models.py 12345678910111213from django.db import models# Create your models here.class UserType(models.Model):    caption = models.CharField(max_length=32)class UserInfo(models.Model):    userna">
+<meta property="og:type" content="website">
+<meta property="og:title" content="modelform">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/modelform.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1基本使用 Models.py 12345678910111213from django.db import models# Create your models here.class UserType(models.Model):    caption = models.CharField(max_length=32)class UserInfo(models.Model):    userna">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T20:00:26.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="modelform">
+<meta name="twitter:description" content="1基本使用 Models.py 12345678910111213from django.db import models# Create your models here.class UserType(models.Model):    caption = models.CharField(max_length=32)class UserInfo(models.Model):    userna">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/modelform.html" class="article-date">
+  <time datetime="2019-11-18T19:59:52.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      modelform
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1基本使用"><a href="#1基本使用" class="headerlink" title="1基本使用"></a>1基本使用</h1><ul>
+<li><p>Models.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserType</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    caption = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    username = models.CharField(verbose_name=<span class="string">"用户名"</span>,max_length=<span class="number">32</span>)</span><br><span class="line">    <span class="comment"># verbose_name:前端生成的html使用的名字</span></span><br><span class="line">    email = models.EmailField()</span><br><span class="line">    user_type = models.ForeignKey(to=<span class="string">'UserType'</span>,to_field=<span class="string">'id'</span>,on_delete=<span class="literal">None</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.username</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> app01 <span class="keyword">import</span> models</span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.forms <span class="keyword">import</span> fields</span><br><span class="line"><span class="comment"># ModelForm模式完成表单验证</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfoModelForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = models.UserInfo <span class="comment"># 指定去哪个类里获取字段</span></span><br><span class="line">        fields = <span class="string">'__all__'</span> <span class="comment"># 使用所有的字段</span></span><br><span class="line">        <span class="comment"># 还可以这么写：fields = ['username','email']</span></span><br><span class="line">        <span class="comment"># exclude:排除哪个字段 exclude = []</span></span><br><span class="line"><span class="comment"># Form模式完成表单验证</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfoForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    username = fields.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    email = fields.EmailField()</span><br><span class="line">    user_type = fields.ChoiceField(</span><br><span class="line">        choices=models.UserType.objects.values_list(<span class="string">'id'</span>,<span class="string">'caption'</span>)</span><br><span class="line">    )</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        super(UserInfoForm,self).__init__(*args,**kwargs)</span><br><span class="line">        self.fields[<span class="string">'user_type'</span>].choices = models.UserType.objects.values_list(<span class="string">'id'</span>,<span class="string">'caption'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        obj = UserInfoModelForm()</span><br><span class="line">    <span class="keyword">elif</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        obj = UserInfoForm(request.POST)</span><br><span class="line">        print(obj.is_valid()) <span class="comment"># 再modelform中同样也有这些方法，因为他们继承的都是BaseForm</span></span><br><span class="line">        print(obj.cleaned_data)</span><br><span class="line">        print(obj.errors)</span><br><span class="line">        <span class="comment"># models.UserInfo.objects.create(**obj.cleaned_data)</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'index.html'</span>,&#123;<span class="string">"obj"</span>:obj&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="2其他用法"><a href="#2其他用法" class="headerlink" title="2其他用法"></a>2其他用法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="class"><span class="keyword">class</span>.<span class="title">Meta</span></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    model,                           <span class="comment"># 对应Model的</span></span><br><span class="line">    fields=<span class="literal">None</span>,[<span class="string">'username'</span>]                     <span class="comment"># 字段</span></span><br><span class="line">    exclude=<span class="literal">None</span>,[<span class="string">'username'</span>]                    <span class="comment"># 排除字段</span></span><br><span class="line">    labels=<span class="literal">None</span>,&#123;<span class="string">'username'</span>:<span class="string">"用户名"</span>&#125;                     <span class="comment"># 提示信息</span></span><br><span class="line">    help_texts=<span class="literal">None</span>,&#123;<span class="string">'username'</span>:<span class="string">"help"</span>&#125;                 <span class="comment"># 帮助提示信息</span></span><br><span class="line">    <span class="comment"># widgets配合一个模块来使用</span></span><br><span class="line">    <span class="comment"># from django.froms import widgets as Fwidgets</span></span><br><span class="line">    widgets=<span class="literal">None</span>,&#123;<span class="string">'username'</span>:Fwidgets.Textarea(attrs=&#123;<span class="string">'class'</span>:<span class="string">'c1'</span>&#125;)&#125;                    <span class="comment"># 自定义插件</span></span><br><span class="line">    error_messages=<span class="literal">None</span>,&#123;<span class="string">'username'</span>:&#123;<span class="string">'required'</span>:<span class="string">"名字太长"</span>&#125;&#125;             <span class="comment"># 自定义错误信息（整体错误信息from django.core.exceptions import NON_FIELD_ERRORS）</span></span><br><span class="line">    field_classes=<span class="literal">None</span>               <span class="comment"># 自定义字段类 （也可以自定义字段）</span></span><br><span class="line">    localized_fields=(<span class="string">'birth_date'</span>,) <span class="comment"># 本地化，如：根据不同时区显示数据</span></span><br><span class="line">    如：</span><br><span class="line">        数据库中</span><br><span class="line">            <span class="number">2016</span><span class="number">-12</span><span class="number">-27</span> <span class="number">04</span>:<span class="number">10</span>:<span class="number">57</span></span><br><span class="line">        setting中的配置</span><br><span class="line">            TIME_ZONE = <span class="string">'Asia/Shanghai'</span></span><br><span class="line">            USE_TZ = <span class="literal">True</span></span><br><span class="line">        则显示：</span><br><span class="line">            <span class="number">2016</span><span class="number">-12</span><span class="number">-27</span> <span class="number">12</span>:<span class="number">10</span>:<span class="number">57</span></span><br><span class="line"><span class="number">2.</span> 验证执行过程</span><br><span class="line">        is_valid -&gt; full_clean -&gt; 钩子 -&gt; 整体错误</span><br><span class="line"> </span><br><span class="line"><span class="number">3.</span> 字典字段验证</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_</span>字段名<span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 可以抛出异常</span></span><br><span class="line">        <span class="comment"># from django.core.exceptions import ValidationError</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"新值"</span></span><br><span class="line"><span class="number">4.</span> 用于验证</span><br><span class="line">    model_form_obj = XXOOModelForm()</span><br><span class="line">    model_form_obj.is_valid()</span><br><span class="line">    model_form_obj.errors.as_json()</span><br><span class="line">    model_form_obj.clean()</span><br><span class="line">    model_form_obj.cleaned_data</span><br><span class="line"><span class="number">5.</span> 用于创建</span><br><span class="line">    model_form_obj = XXOOModelForm(request.POST)</span><br><span class="line">    <span class="comment">#### 页面显示，并提交 #####</span></span><br><span class="line">    <span class="comment"># 默认保存多对多</span></span><br><span class="line">        obj = form.save(commit=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 不做任何操作，内部定义 save_m2m（用于保存多对多）</span></span><br><span class="line">        obj = form.save(commit=<span class="literal">False</span>)</span><br><span class="line">        obj.save()      <span class="comment"># 保存单表信息</span></span><br><span class="line">        obj.save_m2m()  <span class="comment"># 保存关联多对多信息</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 用于更新和初始化</span><br><span class="line">    obj = model.tb.objects.get(id=<span class="number">1</span>)</span><br><span class="line">    model_form_obj = XXOOModelForm(request.POST,instance=obj)</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    PS: 单纯初始化</span><br><span class="line">        model_form_obj = XXOOModelForm(initial=&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/modelform.html" data-id="ck34uuvpk000d4wur3j5fnpnd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
