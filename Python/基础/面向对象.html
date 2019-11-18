@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>面向对象 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、静态方法123456class Animal():		@staticmethod		def dog():			print(&quot;dog&quot;)d1 = Animal()d1.dog()   输出  1&amp;gt;&amp;gt;&amp;gt; dog   以上就是一个静态方法,关键为‘@staticmethod’,静态方法与这个类没有什么联系，只是这个类的一个方法  2、类方法1234567891011class An">
+<meta property="og:type" content="website">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/基础/面向对象.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1、静态方法123456class Animal():		@staticmethod		def dog():			print(&quot;dog&quot;)d1 = Animal()d1.dog()   输出  1&amp;gt;&amp;gt;&amp;gt; dog   以上就是一个静态方法,关键为‘@staticmethod’,静态方法与这个类没有什么联系，只是这个类的一个方法  2、类方法1234567891011class An">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:36:59.326Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象">
+<meta name="twitter:description" content="1、静态方法123456class Animal():		@staticmethod		def dog():			print(&quot;dog&quot;)d1 = Animal()d1.dog()   输出  1&amp;gt;&amp;gt;&amp;gt; dog   以上就是一个静态方法,关键为‘@staticmethod’,静态方法与这个类没有什么联系，只是这个类的一个方法  2、类方法1234567891011class An">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/基础/面向对象.html" class="article-date">
+  <time datetime="2019-11-18T18:36:20.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、静态方法"><a href="#1、静态方法" class="headerlink" title="1、静态方法"></a>1、静态方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">		@staticmethod</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">dog</span><span class="params">()</span>:</span></span><br><span class="line">			print(<span class="string">"dog"</span>)</span><br><span class="line">d1 = Animal()</span><br><span class="line">d1.dog()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上就是一个静态方法,关键为‘@staticmethod’,静态方法与这个类没有什么联系，只是这个类的一个方法</p>
+</blockquote>
+<h1 id="2、类方法"><a href="#2、类方法" class="headerlink" title="2、类方法"></a>2、类方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object):</span><br><span class="line">    n = 1</span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">    </span><br><span class="line">    @classmethod</span><br><span class="line">    def dog(self):</span><br><span class="line">        print(&quot;dog %s&quot; % self.n)</span><br><span class="line"></span><br><span class="line">d1 = Animal(&apos;dog&apos;)</span><br><span class="line">d1.dog()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;  dog 1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>上面就是一个类方法, 关键为‘@classmethod’，类方法只能访问类变量，不能访问实例变量</p>
+</blockquote>
+<h1 id="3、属性方法"><a href="#3、属性方法" class="headerlink" title="3、属性方法"></a>3、属性方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object):</span><br><span class="line">	def __init__(self,name):</span><br><span class="line">		self.name = name</span><br><span class="line">     </span><br><span class="line">    @property</span><br><span class="line">    def dog(self):</span><br><span class="line">        print(&quot;dog %s&quot; % self.name)</span><br><span class="line"></span><br><span class="line">d1 = Animal(&apos;dog&apos;)</span><br><span class="line">d1.dog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上就是一个属性方法，属性方法就是将一个方法变成一个属性，无法传入参数。那么假如我就是要传入参数呢?如下</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object):</span><br><span class="line">	def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">     </span><br><span class="line">    @property</span><br><span class="line">    def dog(self):</span><br><span class="line">        print(&quot;dog %s&quot; % self.name)</span><br><span class="line">    </span><br><span class="line">    @dog.setter</span><br><span class="line">    def dog(self,pinzhong):</span><br><span class="line">        print(&quot;dog is :&quot;,pinzhong )</span><br><span class="line"></span><br><span class="line">d1 = Animal(&apos;dog&apos;)</span><br><span class="line">d1.dog = &quot;哈士奇&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dog is : 哈士奇</span><br><span class="line">	这样既可</span><br><span class="line">	这样的话我调用d1的dog方法还是不行，这是因为我们只是赋值，并没有存起来</span><br><span class="line">class Animal(object):</span><br><span class="line">	def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.__pinzhong = None</span><br><span class="line">     </span><br><span class="line">    @property</span><br><span class="line">    def dog(self):</span><br><span class="line">        print(&quot;dog %s&quot; % self.__pinzhong)</span><br><span class="line">    </span><br><span class="line">    @dog.setter</span><br><span class="line">    def dog(self,pinzhong):</span><br><span class="line">        self.__pinzhong = pinzhong </span><br><span class="line">        print(&quot;dog is :&quot;,pinzhong )</span><br><span class="line"></span><br><span class="line">d1 = Animal(&apos;dog&apos;)</span><br><span class="line">d1.dog = &quot;哈士奇&quot;</span><br><span class="line">d1.dog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dog is : 哈士奇</span><br><span class="line">&gt;&gt;&gt; dog 哈士奇</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>我们可以像上面一样，提前定义一个私有属性，后面使用’setter’再赋值给这个私有属性</p>
+</blockquote>
+<blockquote>
+<p>问题来了，我现在用完这个私有属性后想删掉如何删掉呢</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object):</span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.__pinzhong = None</span><br><span class="line">     </span><br><span class="line">    @property</span><br><span class="line">    def dog(self):</span><br><span class="line">        print(&quot;dog %s&quot; % self.__pinzhong)</span><br><span class="line">    </span><br><span class="line">    @dog.setter</span><br><span class="line">    def dog(self,pinzhong):</span><br><span class="line">        self.__pinzhong = pinzhong </span><br><span class="line">        print(&quot;dog is :&quot;,pinzhong )</span><br><span class="line">    </span><br><span class="line">    @dog.deleter</span><br><span class="line">    def dog(self):</span><br><span class="line">        del self.__pinzhong</span><br><span class="line">        print(&quot;删除完毕&quot;)</span><br><span class="line"></span><br><span class="line">d1 = Animal(&apos;dog&apos;)</span><br><span class="line">d1.dog = &quot;哈士奇&quot;</span><br><span class="line">d1.dog</span><br><span class="line">del d1.dog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; dog is : 哈士奇</span><br><span class="line">&gt;&gt;&gt; dog 哈士奇</span><br><span class="line">&gt;&gt;&gt; 删除完毕</span><br><span class="line">	使用&apos;.deleter&apos;即可</span><br></pre></td></tr></table></figure>
+
+<h1 id="4、类的特殊成员方法"><a href="#4、类的特殊成员方法" class="headerlink" title="4、类的特殊成员方法"></a>4、类的特殊成员方法</h1><ul>
+<li><strong>doc</strong><blockquote>
+<p>表示类的描述信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Foo:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    人物模板</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">a = Foo()</span><br><span class="line">print(a.__doc__)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 人物模板</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>module</strong><blockquote>
+<p>表示当前操作的对象在哪个模块里调用的</p>
+</blockquote>
+</li>
+<li><strong>classl</strong><blockquote>
+<p>输出类</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Foo:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    人物模板</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">a = Foo()</span><br><span class="line">print(a.__class__)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &lt;class &apos;__main__.Foo&apos;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>init</strong><blockquote>
+<p>构造方法，通过类创建对象时，自动触发执行</p>
+</blockquote>
+</li>
+<li><strong>del</strong><blockquote>
+<p>析构方法，当对象在内存中被释放时，自动触发执行</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>注：此方法一般无需定义，因为Python是一门高级语言，程序员在使用时无需关心内存的分配和释放，因为此工作都是交给Python解释器来执行，所以，析构函数的调用是由解释器在进行垃圾回收时自动触发执行的</p>
+</blockquote>
+<ul>
+<li><strong>call</strong><blockquote>
+<p>对象后面加括号，触发执行</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>注：构造方法的执行是由创建对象触发的。即：对象=类名（）：而对于<strong>call</strong>方法执行的是由对象后加的括号触发的，即：对象（）或者类（）（）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Foo:</span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">    def __call__(self,*args,**kwargs):</span><br><span class="line">        print(&quot;__call__ : &quot;,args,kwargs)</span><br><span class="line"></span><br><span class="line">d = Foo(&quot;哈士奇&quot;)</span><br><span class="line">d(1,2,3,name=&quot;哈士奇&quot;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; __call__ :  (1, 2, 3) &#123;&apos;name&apos;: &apos;哈士奇&apos;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>dict</strong><blockquote>
+<p>查看对象或类中的所有成员（包括属性，方法，内置的）</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>类：打印类里的所有属性，不包括实例属性</p>
+</blockquote>
+<blockquote>
+<p>实例：打印所有实例属性，不包括类属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Foo:</span><br><span class="line">    def __init__(self,name):</span><br><span class="line">        self.name = name</span><br><span class="line">    def __call__(self,*args,**kwargs):</span><br><span class="line">        print(&quot;__call__ : &quot;,args,kwargs)</span><br><span class="line"></span><br><span class="line">d = Foo(&quot;哈士奇&quot;)</span><br><span class="line">print(d.__dict__)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &#123;&apos;name&apos;: &apos;哈士奇&apos;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>str</strong><blockquote>
+<p>如果一个类中定义了<strong>str</strong>方法，那么在打印对象时，默认输出该方法的返回值</p>
+</blockquote>
+</li>
+<li><strong>getitem</strong>、<strong>setitem</strong>、<strong>delitem</strong><blockquote>
+<p>用于索引操作，如字典。以上分别表示获取、设置、删除数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Foo(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.data = &#123;&#125;</span><br><span class="line">    def __getitem__(self,key):</span><br><span class="line">        print(&apos;__getitem__&apos;,key)</span><br><span class="line">        return self.data.get(key)</span><br><span class="line">    </span><br><span class="line">    def __setitem__(self,key,value):</span><br><span class="line">        print(&apos;__setitem__&apos;,key,value)</span><br><span class="line">        self.data[key] = value</span><br><span class="line"></span><br><span class="line">    def __delitem__(self,key):</span><br><span class="line">        print(&quot;__delitem__:&quot;,key)</span><br><span class="line"></span><br><span class="line">obj = Foo()</span><br><span class="line">obj[&apos;name&apos;] = &quot;Daniel&quot;</span><br><span class="line">print(obj[&apos;name&apos;])</span><br><span class="line">print(obj.data)</span><br><span class="line">del obj[&apos;name&apos;]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p><strong>输出</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; __setitem__ name Daniel</span><br><span class="line">&gt;&gt;&gt; __getitem__ name</span><br><span class="line">	Daniel</span><br><span class="line">&gt;&gt;&gt; &#123;&apos;name&apos;: &apos;Daniel&apos;&#125;</span><br><span class="line">&gt;&gt;&gt; __delitem__: name</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>new</strong><blockquote>
+<p>跟’<strong>init</strong>‘一样，实例化时先走’<strong>new</strong>‘,优先级比’<strong>init</strong>‘高</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/基础/面向对象.html" data-id="ck34rugip000df0ur1e1cy2c0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
