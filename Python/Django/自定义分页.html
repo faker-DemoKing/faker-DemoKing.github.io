@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>自定义分页 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 自定义分页1.1 示例1 py内容 123456789def user_list(request):    li = []    for i in range(100):        li.append(i)    current_page = int(request.GET.get(&apos;p&apos;,1))    start = (current_page-1) * 10    end = cur">
+<meta property="og:type" content="website">
+<meta property="og:title" content="自定义分页">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/自定义分页.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1. 自定义分页1.1 示例1 py内容 123456789def user_list(request):    li = []    for i in range(100):        li.append(i)    current_page = int(request.GET.get(&apos;p&apos;,1))    start = (current_page-1) * 10    end = cur">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-18T18:57:08.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义分页">
+<meta name="twitter:description" content="1. 自定义分页1.1 示例1 py内容 123456789def user_list(request):    li = []    for i in range(100):        li.append(i)    current_page = int(request.GET.get(&apos;p&apos;,1))    start = (current_page-1) * 10    end = cur">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Django/自定义分页.html" class="article-date">
+  <time datetime="2019-11-18T18:56:00.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自定义分页
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-自定义分页"><a href="#1-自定义分页" class="headerlink" title="1. 自定义分页"></a>1. 自定义分页</h1><h2 id="1-1-示例1"><a href="#1-1-示例1" class="headerlink" title="1.1 示例1"></a>1.1 示例1</h2><ul>
+<li><p>py内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    li = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        li.append(i)</span><br><span class="line">    current_page = int(request.GET.get(<span class="string">'p'</span>,<span class="number">1</span>))</span><br><span class="line">    start = (current_page<span class="number">-1</span>) * <span class="number">10</span></span><br><span class="line">    end = current_page * <span class="number">10</span></span><br><span class="line">    data = li[start:end]</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'user_list.html'</span>,&#123;<span class="string">'li'</span>:data&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        &#123;% for i in li %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/user_list/?p=1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/user_list/?p=2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/user_list/?p=3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>这里分页是可以了，但是可不可以给我显示出我一共有几页呢？</p>
+<h2 id="1-2-示例2"><a href="#1-2-示例2" class="headerlink" title="1.2 示例2"></a>1.2 示例2</h2><ul>
+<li><p>方案1</p>
+<ul>
+<li><p>py文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    li = []</span><br><span class="line">    all_p_list = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">101</span>):</span><br><span class="line">        li.append(i)</span><br><span class="line">    current_page = int(request.GET.get(<span class="string">'p'</span>,<span class="number">1</span>))</span><br><span class="line">    start = (current_page<span class="number">-1</span>) * <span class="number">10</span></span><br><span class="line">    end = current_page * <span class="number">10</span></span><br><span class="line">    data = li[start:end]</span><br><span class="line">    all_page = (divmod((int(len(li))),<span class="number">10</span>))</span><br><span class="line">    all_page = (all_page[<span class="number">0</span>] <span class="keyword">if</span> all_page[<span class="number">1</span>] == <span class="number">0</span> <span class="keyword">else</span> all_page[<span class="number">0</span>]+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,all_page+<span class="number">1</span>):</span><br><span class="line">        all_p_list.append(i)</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'user_list.html'</span>,&#123;<span class="string">'li'</span>:data,<span class="string">'all_page'</span>:all_p_list&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        &#123;% for i in li %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    &#123;% for row in all_page %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/user_list/?p=&#123;&#123; row &#125;&#125;"</span>&gt;</span>&#123;&#123; row &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>方案2</p>
+<ul>
+<li><p>py文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    li = []</span><br><span class="line">    all_p_list = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">109</span>):</span><br><span class="line">        li.append(i)</span><br><span class="line">    current_page = int(request.GET.get(<span class="string">'p'</span>,<span class="number">1</span>))</span><br><span class="line">    start = (current_page<span class="number">-1</span>) * <span class="number">10</span></span><br><span class="line">    end = current_page * <span class="number">10</span></span><br><span class="line">    data = li[start:end]</span><br><span class="line"></span><br><span class="line">    all_page = (divmod((int(len(li))),<span class="number">10</span>))</span><br><span class="line">    all_page = (all_page[<span class="number">0</span>] <span class="keyword">if</span> all_page[<span class="number">1</span>] == <span class="number">0</span> <span class="keyword">else</span> all_page[<span class="number">0</span>]+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,all_page+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i == current_page:</span><br><span class="line">            temp = <span class="string">'&lt;a class="page active" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">        all_p_list.append(temp)</span><br><span class="line">    page_str = <span class="string">""</span>.join(all_p_list)</span><br><span class="line">    print(page_str)</span><br><span class="line">    page_str = mark_safe(page_str)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'user_list.html'</span>,&#123;<span class="string">'li'</span>:data,<span class="string">'all_page'</span>:page_str&#125;)</span><br><span class="line">st.html<span class="string">',&#123;'</span>li<span class="string">':data,'</span>all_page<span class="string">':page_str&#125;)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        .page &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            padding: 5px;</span><br><span class="line">            background-color: cyan;</span><br><span class="line">            margin: 5px;</span><br><span class="line">        &#125;</span><br><span class="line">        .active &#123;</span><br><span class="line">            background-color: black;</span><br><span class="line">            color: white;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        &#123;% for i in li %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;&#123; all_page &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>这个时候，有了高亮和分页，但是还有一个问题，就是如果数据特别多，比如有1000条数据，是不是有一百页呢，然后同时显示在一个页面上，多丑啊</strong></p>
+<p>解决方法如下：</p>
+<ul>
+<li><p>py文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    li = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10000</span>+<span class="number">1</span>):</span><br><span class="line">        li.append(i)</span><br><span class="line">    current_page = int(request.GET.get(<span class="string">'p'</span>,<span class="number">1</span>)) <span class="comment"># 获取当前页码</span></span><br><span class="line">    page_obj = Page(current_page,len(li))</span><br><span class="line">    data = li[page_obj.start():page_obj.end()] <span class="comment"># 数据</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'user_list.html'</span>,&#123;<span class="string">'li'</span>:data,<span class="string">'all_page'</span>:page_obj.page_str()&#125;)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,current_page,data_count,dis_data=<span class="number">10</span>,dis_page=<span class="number">10</span>)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        current_page:传过来的当前页的值</span></span><br><span class="line"><span class="string">          data_count:数据总个数</span></span><br><span class="line"><span class="string">            dis_data:要显示的数据个数,默认为10</span></span><br><span class="line"><span class="string">            dis_page:要显示的页数,默认为10</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.current_page = current_page</span><br><span class="line">        self.data_count = data_count</span><br><span class="line">        self.dis_data = dis_data</span><br><span class="line">        self.dis_page = dis_page</span><br><span class="line">        total_page = divmod(int(self.data_count),self.dis_page)</span><br><span class="line">        self.total_page = (total_page[<span class="number">0</span>] <span class="keyword">if</span> total_page[<span class="number">1</span>] == <span class="number">0</span> <span class="keyword">else</span> total_page[<span class="number">0</span>]+<span class="number">1</span>) <span class="comment"># 取出如果有余数则总页码加一</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (self.current_page - <span class="number">1</span>) * self.dis_page</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">end</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.current_page * self.dis_page</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page_str</span><span class="params">(self)</span>:</span></span><br><span class="line">        page_list = []</span><br><span class="line">        start_index = <span class="number">1</span></span><br><span class="line">        end_index = self.dis_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.total_page &lt; end_index:</span><br><span class="line">            end_index = self.total_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> self.current_page &gt;<span class="number">5</span> <span class="keyword">and</span> self.current_page +<span class="number">5</span> &lt;= self.total_page:</span><br><span class="line">            start_index = self.current_page - <span class="number">4</span></span><br><span class="line">            end_index = self.current_page + <span class="number">6</span></span><br><span class="line">        <span class="keyword">elif</span> self.current_page &lt;= <span class="number">5</span>:</span><br><span class="line">            start_index = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            start_index = self.total_page - <span class="number">9</span></span><br><span class="line">            end_index = self.total_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.current_page == <span class="number">1</span>:</span><br><span class="line">            prev = <span class="string">'&lt;a class="page" href="javascript:void(0);"&gt;上一页&lt;/a&gt;'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;上一页&lt;/a&gt;'</span> %(self.current_page<span class="number">-1</span>,)</span><br><span class="line">        page_list.append(prev)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start_index,end_index):</span><br><span class="line">            <span class="keyword">if</span> i == self.current_page:</span><br><span class="line">                temp = <span class="string">'&lt;a class="page active" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                temp = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">            page_list.append(temp)</span><br><span class="line">        <span class="keyword">if</span> self.current_page == self.total_page:</span><br><span class="line">            nex = <span class="string">'&lt;a class="page" href="javascript:void(0);"&gt;下一页&lt;/a&gt;'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            nex = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;下一页&lt;/a&gt;'</span> % (self.current_page+<span class="number">1</span>)</span><br><span class="line">        page_list.append(nex)</span><br><span class="line">        page_str = <span class="string">""</span>.join(page_list)</span><br><span class="line">        page_str = mark_safe(page_str)</span><br><span class="line">        <span class="keyword">return</span> page_str</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        .page &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            padding: 5px;</span><br><span class="line">            background-color: cyan;</span><br><span class="line">            margin: 5px;</span><br><span class="line">        &#125;</span><br><span class="line">        .active &#123;</span><br><span class="line">            background-color: black;</span><br><span class="line">            color: white;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        &#123;% for i in li %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; i &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;&#123; all_page &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>这就算是解决了很多问题了，但是我们分页这个功能有很多地方都可以用，所以我们可以把他封装成一个类</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    li = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10000</span>+<span class="number">1</span>):</span><br><span class="line">        li.append(i)</span><br><span class="line">    current_page = int(request.GET.get(<span class="string">'p'</span>,<span class="number">1</span>)) <span class="comment"># 获取当前页码</span></span><br><span class="line">    page_obj = Page(current_page,len(li))</span><br><span class="line">    data = li[page_obj.start():page_obj.end()] <span class="comment"># 数据</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'user_list.html'</span>,&#123;<span class="string">'li'</span>:data,<span class="string">'all_page'</span>:page_obj.page_str()&#125;)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,current_page,data_count,dis_data=<span class="number">10</span>,dis_page=<span class="number">10</span>)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        current_page:传过来的当前页的值</span></span><br><span class="line"><span class="string">          data_count:数据总个数</span></span><br><span class="line"><span class="string">            dis_data:要显示的数据个数,默认为10</span></span><br><span class="line"><span class="string">            dis_page:要显示的页数,默认为10</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.current_page = current_page</span><br><span class="line">        self.data_count = data_count</span><br><span class="line">        self.dis_data = int(dis_data)</span><br><span class="line">        self.dis_page = dis_page</span><br><span class="line">        total_page = divmod(int(self.data_count),self.dis_data)</span><br><span class="line">        self.total_page = (total_page[<span class="number">0</span>] <span class="keyword">if</span> total_page[<span class="number">1</span>] == <span class="number">0</span> <span class="keyword">else</span> total_page[<span class="number">0</span>]+<span class="number">1</span>) <span class="comment"># 取出如果有余数则总页码加一</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (self.current_page - <span class="number">1</span>) * self.dis_data</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">end</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.current_page * self.dis_data</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page_str</span><span class="params">(self)</span>:</span></span><br><span class="line">        page_list = []</span><br><span class="line">        start_index = <span class="number">1</span></span><br><span class="line">        end_index = self.dis_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.total_page &lt; end_index:</span><br><span class="line">            end_index = self.total_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> self.current_page &gt;<span class="number">5</span> <span class="keyword">and</span> self.current_page +<span class="number">5</span> &lt;= self.total_page:</span><br><span class="line">            start_index = self.current_page - <span class="number">4</span></span><br><span class="line">            end_index = self.current_page + <span class="number">6</span></span><br><span class="line">        <span class="keyword">elif</span> self.current_page &lt;= <span class="number">5</span>:</span><br><span class="line">            start_index = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            start_index = self.total_page - <span class="number">9</span></span><br><span class="line">            end_index = self.total_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.current_page == <span class="number">1</span>:</span><br><span class="line">            prev = <span class="string">'&lt;a class="page" href="javascript:void(0);"&gt;上一页&lt;/a&gt;'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;上一页&lt;/a&gt;'</span> %(self.current_page<span class="number">-1</span>,)</span><br><span class="line">        page_list.append(prev)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(start_index,end_index):</span><br><span class="line">            <span class="keyword">if</span> i == self.current_page:</span><br><span class="line">                temp = <span class="string">'&lt;a class="page active" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                temp = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;%s&lt;/a&gt;'</span> % (i,i)</span><br><span class="line">            page_list.append(temp)</span><br><span class="line">        <span class="keyword">if</span> self.current_page == self.total_page:</span><br><span class="line">            nex = <span class="string">'&lt;a class="page" href="javascript:void(0);"&gt;下一页&lt;/a&gt;'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            nex = <span class="string">'&lt;a class="page" href="/user_list/?p=%s"&gt;下一页&lt;/a&gt;'</span> % (self.current_page+<span class="number">1</span>)</span><br><span class="line">        page_list.append(nex)</span><br><span class="line">        page_str = <span class="string">""</span>.join(page_list)</span><br><span class="line">        page_str = mark_safe(page_str)</span><br><span class="line">        <span class="keyword">return</span> page_str</span><br></pre></td></tr></table></figure>
+
+<p>html就不写了，跟上一个例子一样</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Django/自定义分页.html" data-id="ck34suda7000iccur1dtlwqmo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

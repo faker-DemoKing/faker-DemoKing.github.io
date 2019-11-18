@@ -5,19 +5,19 @@
   
 
   
-  <title>Python | Faker</title>
+  <title>view获取用户请求相关信息 | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础  Django  Flask">
+  <meta name="description" content="12345678def index(request):    v= reverse(&apos;author:index&apos;)    print(v)    print(request.environ) # 查看所有的请求头    for k,v in request.environ.items(): # 循环，分别取出key和value        print(k,&apos;----&apos;,v)    return">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="https://faker-demoking.github.io/Python/index.html">
+<meta property="og:title" content="view获取用户请求相关信息">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Django/view获取用户请求相关信息.html">
 <meta property="og:site_name" content="Faker">
-<meta property="og:description" content="基础  Django  Flask">
+<meta property="og:description" content="12345678def index(request):    v= reverse(&apos;author:index&apos;)    print(v)    print(request.environ) # 查看所有的请求头    for k,v in request.environ.items(): # 循环，分别取出key和value        print(k,&apos;----&apos;,v)    return">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T18:47:24.842Z">
+<meta property="og:updated_time" content="2019-11-18T18:58:44.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python">
-<meta name="twitter:description" content="基础  Django  Flask">
+<meta name="twitter:title" content="view获取用户请求相关信息">
+<meta name="twitter:description" content="12345678def index(request):    v= reverse(&apos;author:index&apos;)    print(v)    print(request.environ) # 查看所有的请求头    for k,v in request.environ.items(): # 循环，分别取出key和value        print(k,&apos;----&apos;,v)    return">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -70,8 +70,8 @@
       <div class="outer">
         <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/Python/index.html" class="article-date">
-  <time datetime="2019-10-18T17:02:38.000Z" itemprop="datePublished">2019-10-18</time>
+    <a href="/Python/Django/view获取用户请求相关信息.html" class="article-date">
+  <time datetime="2019-11-18T18:58:11.000Z" itemprop="datePublished">2019-11-18</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python
+      view获取用户请求相关信息
     </h1>
   
 
@@ -90,19 +90,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p><strong><a href="https://faker-demoking.github.io/Python/基础">基础</a></strong></p>
-</li>
-<li><p><strong><a href="https://faker-demoking.github.io/Python/Django">Django</a></strong></p>
-</li>
-<li><p><strong><a href="https://faker-demoking.github.io/Python/Flask">Flask</a></strong></p>
-</li>
-</ul>
-
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    v= reverse(<span class="string">'author:index'</span>)</span><br><span class="line">    print(v)</span><br><span class="line">    print(request.environ) <span class="comment"># 查看所有的请求头</span></span><br><span class="line">    <span class="keyword">for</span> k,v <span class="keyword">in</span> request.environ.items(): <span class="comment"># 循环，分别取出key和value</span></span><br><span class="line">        print(k,<span class="string">'----'</span>,v)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'ok'</span>)</span><br><span class="line">request.environ[<span class="string">'HTTP_USER_AGENT'</span>] <span class="comment"># 比如这个，客户端信息的请求头</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://faker-demoking.github.io/Python/index.html" data-id="ck34sud9g0004ccurb9z4467i" class="article-share-link">Share</a>
+      <a data-url="https://faker-demoking.github.io/Python/Django/view获取用户请求相关信息.html" data-id="ck34sud9u0008ccurt5faj6jr" class="article-share-link">Share</a>
       
       
     </footer>
