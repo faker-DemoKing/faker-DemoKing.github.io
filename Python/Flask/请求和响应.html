@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>请求和响应 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#!/usr/bin/python3from flask import Flaskfrom flask import requestfrom flask import render_template, jsonifyfro">
+<meta property="og:type" content="website">
+<meta property="og:title" content="请求和响应">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/请求和响应.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#!/usr/bin/python3from flask import Flaskfrom flask import requestfrom flask import render_template, jsonifyfro">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-19T20:11:06.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="请求和响应">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#!/usr/bin/python3from flask import Flaskfrom flask import requestfrom flask import render_template, jsonifyfro">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Flask/请求和响应.html" class="article-date">
+  <time datetime="2019-11-19T20:09:51.000Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      请求和响应
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template, jsonify</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> redirect</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/login.html', methods=['GET', "POST"])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 请求相关信息</span></span><br><span class="line">    <span class="comment"># request.method</span></span><br><span class="line">    <span class="comment"># request.args</span></span><br><span class="line">    <span class="comment"># request.form</span></span><br><span class="line">    <span class="comment"># request.values</span></span><br><span class="line">    <span class="comment"># request.cookies</span></span><br><span class="line">    <span class="comment"># request.headers</span></span><br><span class="line">    <span class="comment"># request.path</span></span><br><span class="line">    <span class="comment"># request.full_path</span></span><br><span class="line">    <span class="comment"># request.script_root</span></span><br><span class="line">    <span class="comment"># request.url</span></span><br><span class="line">    <span class="comment"># request.base_url</span></span><br><span class="line">    <span class="comment"># request.url_root</span></span><br><span class="line">    <span class="comment"># request.host_url</span></span><br><span class="line">    <span class="comment"># request.host</span></span><br><span class="line">    <span class="comment"># request.files</span></span><br><span class="line">    <span class="comment"># obj = request.files['the_file_name']</span></span><br><span class="line">    <span class="comment"># obj.save('/var/www/uploads/' + secure_filename(f.filename))</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 响应相关信息</span></span><br><span class="line">    <span class="comment"># return "字符串"</span></span><br><span class="line">    <span class="comment"># return render_template('html模板路径',**&#123;&#125;)</span></span><br><span class="line">    <span class="comment"># return redirect('/index.html')</span></span><br><span class="line">    <span class="comment"># return jsonify(&#123;'k1':'v1'&#125;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># response = make_response(render_template('index.html'))</span></span><br><span class="line">    <span class="comment"># response是flask.wrappers.Response类型</span></span><br><span class="line">    <span class="comment"># response.delete_cookie('key')</span></span><br><span class="line">    <span class="comment"># response.set_cookie('key', 'value')</span></span><br><span class="line">    <span class="comment"># response.headers['X-Something'] = 'A value'</span></span><br><span class="line">    <span class="comment"># return response</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">"内容"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Flask/请求和响应.html" data-id="ck36ao217000u1our4yjp51do" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
