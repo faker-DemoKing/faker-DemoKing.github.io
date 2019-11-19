@@ -7,17 +7,17 @@
   
   <title>装饰器 | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
+  <meta name="description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwa">
 <meta property="og:type" content="website">
 <meta property="og:title" content="装饰器">
 <meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/装饰器.html">
 <meta property="og:site_name" content="Faker">
-<meta property="og:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
+<meta property="og:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwa">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-19T20:14:58.251Z">
+<meta property="og:updated_time" content="2019-11-19T20:16:06.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="装饰器">
-<meta name="twitter:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
+<meta name="twitter:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwa">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -90,7 +90,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wapper</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> func(*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@wapper</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">print(f1.__name__)</span><br></pre></td></tr></table></figure>
+        <hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wapper</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> func(*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@wapper</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">print(f1.__name__)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
