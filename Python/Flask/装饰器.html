@@ -5,19 +5,19 @@
   
 
   
-  <title>目录 | Faker</title>
+  <title>装饰器 | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux  Python  Vue  Work  搭建自己的hexo博客">
-<meta property="og:type" content="article">
-<meta property="og:title" content="目录">
-<meta property="og:url" content="https://faker-demoking.github.io/2019/10/08/index/index.html">
+  <meta name="description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
+<meta property="og:type" content="website">
+<meta property="og:title" content="装饰器">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/装饰器.html">
 <meta property="og:site_name" content="Faker">
-<meta property="og:description" content="Linux  Python  Vue  Work  搭建自己的hexo博客">
+<meta property="og:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T05:58:59.743Z">
+<meta property="og:updated_time" content="2019-11-19T20:13:23.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="目录">
-<meta name="twitter:description" content="Linux  Python  Vue  Work  搭建自己的hexo博客">
+<meta name="twitter:title" content="装饰器">
+<meta name="twitter:description" content="1234567891011121314#!/usr/bin/python3import functoolsdef wapper(func):    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner    def inner(*args,**kwargs):        return func(*args,**kwar">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-index" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/08/index/" class="article-date">
-  <time datetime="2019-10-08T13:32:27.000Z" itemprop="datePublished">2019-10-08</time>
+    <a href="/Python/Flask/装饰器.html" class="article-date">
+  <time datetime="2019-11-19T20:12:56.000Z" itemprop="datePublished">2019-11-20</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      目录
+      装饰器
     </h1>
   
 
@@ -90,23 +90,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p><strong><a href="https://faker-demoking.github.io/Linux/">Linux</a></strong></p>
-</li>
-<li><p><strong><a href="https://faker-demoking.github.io/Python/">Python</a></strong></p>
-</li>
-<li><p><strong><a href="https://faker-demoking.github.io/Vue/">Vue</a></strong></p>
-</li>
-<li><p><strong><a href="https://faker-demoking.github.io/Work/">Work</a></strong></p>
-</li>
-<li><p><strong><a href="https://github.com/jackfrued/Python-100-Days/blob/master/%E7%95%AA%E5%A4%96%E7%AF%87/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2.md" target="_blank" rel="noopener">搭建自己的hexo博客</a></strong></p>
-</li>
-</ul>
-
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wapper</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @functools.wraps(func) # 帮助我们设置函数的元信息,如果不设置的话，f1.__name__就是inner</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> func(*args,**kwargs)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@wapper</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">print(f1.__name__)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://faker-demoking.github.io/2019/10/08/index/" data-id="ck36apy2c000708urwiqyt4v0" class="article-share-link">Share</a>
+      <a data-url="https://faker-demoking.github.io/Python/Flask/装饰器.html" data-id="ck36apy32000s08ur96m32kzj" class="article-share-link">Share</a>
       
       
     </footer>
