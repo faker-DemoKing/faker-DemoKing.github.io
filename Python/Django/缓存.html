@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Faker">
 <meta property="og:description" content="1 简介由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。 1.1 Django中提供了6种缓存方式： 开发调试  内存  文件  数据库">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T19:52:04.417Z">
+<meta property="og:updated_time" content="2019-11-20T06:55:58.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="1 简介由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。 1.1 Django中提供了6种缓存方式： 开发调试  内存  文件  数据库">
@@ -90,7 +90,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。</p>
+        <hr>
+<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显，最简单解决方式是使用：缓存，缓存将一个某个views的返回值保存至内存或者memcache中，5分钟内再有人来访问时，则不再去执行view中的操作，而是直接从内存或者Redis中之前缓存的内容拿到，并返回。</p>
 <h2 id="1-1-Django中提供了6种缓存方式："><a href="#1-1-Django中提供了6种缓存方式：" class="headerlink" title="1.1 Django中提供了6种缓存方式："></a>1.1 Django中提供了6种缓存方式：</h2><ul>
 <li><p>开发调试</p>
 </li>

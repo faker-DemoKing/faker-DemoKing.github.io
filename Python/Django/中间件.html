@@ -7,17 +7,17 @@
   
   <title>中间件 | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mid">
+  <meta name="description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mi">
 <meta property="og:type" content="website">
 <meta property="og:title" content="中间件">
 <meta property="og:url" content="https://faker-demoking.github.io/Python/Django/中间件.html">
 <meta property="og:site_name" content="Faker">
-<meta property="og:description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mid">
+<meta property="og:description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mi">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-18T19:48:18.819Z">
+<meta property="og:updated_time" content="2019-11-20T06:56:38.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中间件">
-<meta name="twitter:description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mid">
+<meta name="twitter:description" content="1 简介django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一 123456789MIDDLEWARE = [    &apos;django.mi">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -90,7 +90,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。<br>在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一</p>
+        <hr>
+<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。<br>在django项目的settings模块中，有一个 MIDDLEWARE变量，其中每一个元素就是一个中间件,我们刚才说的csrf就是其中之一</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'django.middleware.security.SecurityMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.common.CommonMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.csrf.CsrfViewMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth.middleware.AuthenticationMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages.middleware.MessageMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.clickjacking.XFrameOptionsMiddleware'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 <h2 id="1-1-中间件中可以定义四个方法，分别是："><a href="#1-1-中间件中可以定义四个方法，分别是：" class="headerlink" title="1.1 中间件中可以定义四个方法，分别是："></a>1.1 中间件中可以定义四个方法，分别是：</h2><ul>

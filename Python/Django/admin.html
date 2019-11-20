@@ -7,17 +7,17 @@
   
   <title>admin | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passwo">
+  <meta name="description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passw">
 <meta property="og:type" content="website">
 <meta property="og:title" content="admin">
 <meta property="og:url" content="https://faker-demoking.github.io/Python/Django/admin.html">
 <meta property="og:site_name" content="Faker">
-<meta property="og:description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passwo">
+<meta property="og:description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passw">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-19T19:56:01.579Z">
+<meta property="og:updated_time" content="2019-11-20T06:57:57.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="admin">
-<meta name="twitter:description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passwo">
+<meta name="twitter:description" content="注册和添加动作 1.示例model   1234567891011121314151617class RemoteUser(models.Model):    &quot;&quot;&quot;        存储远程用户名密码    &quot;&quot;&quot;    username = models.CharField(max_length=64)    auth_type_choices = (        (0,&apos;ssh/passw">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -90,7 +90,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="注册和添加动作"><a href="#注册和添加动作" class="headerlink" title="注册和添加动作"></a>注册和添加动作</h1><ul>
+        <hr>
+<h1 id="注册和添加动作"><a href="#注册和添加动作" class="headerlink" title="注册和添加动作"></a>注册和添加动作</h1><ul>
 <li><p>1.示例model</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RemoteUser</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        存储远程用户名密码</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    username = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line">    auth_type_choices = (</span><br><span class="line">        (<span class="number">0</span>,<span class="string">'ssh/password'</span>),</span><br><span class="line">        (<span class="number">1</span>,<span class="string">'ssh/key'</span>))</span><br><span class="line">    auth_type = models.SmallIntegerField(choices=auth_type_choices,default=<span class="number">0</span>)</span><br><span class="line">    password = models.CharField(max_length=<span class="number">128</span>,blank=<span class="literal">True</span>,null=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"%s(%s)%s"</span> % (self.username,self.get_auth_type_display(),self.password)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        unique_together = (<span class="string">'username'</span>,<span class="string">'auth_type'</span>,<span class="string">'password'</span>)</span><br></pre></td></tr></table></figure>
 </li>
