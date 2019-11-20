@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>threading.local | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.1 ThreadLocal12345678910111213import threadinglocal_values = threading.local()  # 用于为每个线程开辟一块空间保存它独有的值def func(num):    local_values.name = num    import time    time.sleep(1)    print(local_values">
+<meta property="og:type" content="website">
+<meta property="og:title" content="threading.local">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/threading-local.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.1 ThreadLocal12345678910111213import threadinglocal_values = threading.local()  # 用于为每个线程开辟一块空间保存它独有的值def func(num):    local_values.name = num    import time    time.sleep(1)    print(local_values">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-20T07:50:10.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="threading.local">
+<meta name="twitter:description" content="1.1 ThreadLocal12345678910111213import threadinglocal_values = threading.local()  # 用于为每个线程开辟一块空间保存它独有的值def func(num):    local_values.name = num    import time    time.sleep(1)    print(local_values">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Flask/threading-local.html" class="article-date">
+  <time datetime="2019-11-20T07:49:45.000Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      threading.local
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="1-1-ThreadLocal"><a href="#1-1-ThreadLocal" class="headerlink" title="1.1 ThreadLocal"></a>1.1 ThreadLocal</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">local_values = threading.local()  <span class="comment"># 用于为每个线程开辟一块空间保存它独有的值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(num)</span>:</span></span><br><span class="line">    local_values.name = num</span><br><span class="line">    <span class="keyword">import</span> time</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(local_values.name, threading.current_thread().name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">    th = threading.Thread(target=func, args=(i,), name=<span class="string">'线程%s'</span> % i)</span><br><span class="line">    th.start()</span><br></pre></td></tr></table></figure></code></pre><h2 id="1-2-自定义支持协程和线程的Local对象"><a href="#1-2-自定义支持协程和线程的Local对象" class="headerlink" title="1.2 自定义支持协程和线程的Local对象"></a>1.2 自定义支持协程和线程的Local对象</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> greenlet <span class="keyword">import</span> getcurrent <span class="keyword">as</span> get_ident <span class="comment"># 协程</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">from</span> thread <span class="keyword">import</span> get_ident</span><br><span class="line">    <span class="keyword">except</span> ImportError:</span><br><span class="line">        <span class="keyword">from</span> _thread <span class="keyword">import</span> get_ident <span class="comment"># 线程</span></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Local</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        object.__setattr__(self, <span class="string">'__storage__'</span>, &#123;&#125;)</span><br><span class="line">        object.__setattr__(self, <span class="string">'__ident_func__'</span>, get_ident)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> self.__storage__[self.__ident_func__()][name]</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            <span class="keyword">raise</span> AttributeError(name)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span><span class="params">(self, name, value)</span>:</span></span><br><span class="line">        ident = self.__ident_func__()</span><br><span class="line">        storage = self.__storage__</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            storage[ident][name] = value</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            storage[ident] = &#123;name: value&#125;</span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__delattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">del</span> self.__storage__[self.__ident_func__()][name]</span><br><span class="line">        <span class="keyword">except</span> KeyError:</span><br><span class="line">            <span class="keyword">raise</span> AttributeError(name)</span><br><span class="line"></span><br><span class="line">local_values = Local()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(num)</span>:</span></span><br><span class="line">    local_values.name = num</span><br><span class="line">    <span class="keyword">import</span> time</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(local_values.name, threading.current_thread().name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">    th = threading.Thread(target=task, args=(i,), name=<span class="string">'线程%s'</span> %i)</span><br><span class="line">    th.start()</span><br></pre></td></tr></table></figure></code></pre><h2 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a>其他补充</h2><ul>
+<li><p>__开头的方法</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask.globals <span class="comment"># 点进去查看其他的 '__' 开头的方法,以下只举了一个 __add__ 方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a1, a2)</span>:</span></span><br><span class="line">    print(a1, a2)</span><br><span class="line"></span><br><span class="line">new_func = functools.partial(func, <span class="number">666</span>) <span class="comment"># 新生成一个函数 并帮我传递第一个参数 “666”</span></span><br><span class="line"></span><br><span class="line">new_func(<span class="number">999</span>) <span class="comment"># 执行新函数 传递第二个参数 999</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.num + other.num</span><br><span class="line"></span><br><span class="line">obj1 = Foo(<span class="number">1</span>)</span><br><span class="line">obj2 = Foo(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">print(obj1 + obj2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>chain</p>
+</li>
+</ul>
+<p>帮助我们拼接列表里的值<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> chain</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">func_list = [f1, <span class="keyword">lambda</span> x:print(x - <span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x + <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">new_func_list = chain([f2], func_list) <span class="comment"># 放进去的参数必须都是可迭代</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> func <span class="keyword">in</span> new_func_list:</span><br><span class="line">    func(<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>## 总结
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.__call__</span><br><span class="line">    app.request_class</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Flask/threading-local.html" data-id="ck3712qgd000qzcurgxdh6j9c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

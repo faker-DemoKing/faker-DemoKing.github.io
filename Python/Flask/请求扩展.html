@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>请求扩展 | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="可以写多个扩展，按解释顺序执行 1.1 before_request123456789101112131415161718#!/usr/bin/python3from flask import Flask, request, redirectapp = Flask(__name__)app.debug = True@app.before_requestdef process_request(*a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="请求扩展">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/请求扩展.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="可以写多个扩展，按解释顺序执行 1.1 before_request123456789101112131415161718#!/usr/bin/python3from flask import Flask, request, redirectapp = Flask(__name__)app.debug = True@app.before_requestdef process_request(*a">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-20T07:37:11.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="请求扩展">
+<meta name="twitter:description" content="可以写多个扩展，按解释顺序执行 1.1 before_request123456789101112131415161718#!/usr/bin/python3from flask import Flask, request, redirectapp = Flask(__name__)app.debug = True@app.before_requestdef process_request(*a">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Flask/请求扩展.html" class="article-date">
+  <time datetime="2019-11-20T07:36:35.000Z" itemprop="datePublished">2019-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      请求扩展
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>可以写多个扩展，按解释顺序执行</p>
+<h2 id="1-1-before-request"><a href="#1-1-before-request" class="headerlink" title="1.1 before_request"></a>1.1 before_request</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, redirect</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.before_request</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.path == <span class="string">'/login'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    user = session.get(<span class="string">'user_info'</span>) <span class="comment"># 判断是否登录，未登录则跳转到login，有个问题是如果跳到login也是未认证，会进入一个死循环</span></span><br><span class="line">    <span class="keyword">if</span> user:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> redirect(<span class="string">'/login'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></code></pre><h2 id="1-2-after-request"><a href="#1-2-after-request" class="headerlink" title="1.2 after_request"></a>1.2 after_request</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.before_request</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">    print(<span class="string">'1'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.after_request</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_response</span><span class="params">(response)</span>:</span></span><br><span class="line">    print(<span class="string">'3'</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/index')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'2'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'index'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></code></pre><h2 id="1-3-定制错误信息"><a href="#1-3-定制错误信息" class="headerlink" title="1.3 定制错误信息"></a>1.3 定制错误信息</h2><pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_404</span><span class="params">(arg)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"NOT FOUND"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+## 1.4 before_first_request
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.before_first_request</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">before_first_request1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'before_first_request1'</span>)</span><br><span class="line"><span class="comment"># 第一次请求触发</span></span><br></pre></td></tr></table></figure></code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Flask/请求扩展.html" data-id="ck3712qgg000wzcur40y1lkvq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

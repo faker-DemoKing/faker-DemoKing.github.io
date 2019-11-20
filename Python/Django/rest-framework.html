@@ -7,14 +7,17 @@
   
   <title>rest-framework | Faker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1.RESTful API设计1.1 API于用户的通信协议，总是使用HTTPS协议1.2 域名12api.daniel.com # 存在跨域问题www.daniel.com/api # 实现简单1.3 版本 www.daniel.com/api/v1 1.4 路径，视网络上的任何东西都是资源，均使用名词表示（可复数） https://api.daniel.com/v1/qwer 1.4 met">
+<meta property="og:type" content="website">
 <meta property="og:title" content="rest-framework">
 <meta property="og:url" content="https://faker-demoking.github.io/Python/Django/rest-framework.html">
 <meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.RESTful API设计1.1 API于用户的通信协议，总是使用HTTPS协议1.2 域名12api.daniel.com # 存在跨域问题www.daniel.com/api # 实现简单1.3 版本 www.daniel.com/api/v1 1.4 路径，视网络上的任何东西都是资源，均使用名词表示（可复数） https://api.daniel.com/v1/qwer 1.4 met">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-19T14:16:26.755Z">
+<meta property="og:updated_time" content="2019-11-20T07:13:23.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rest-framework">
+<meta name="twitter:description" content="1.RESTful API设计1.1 API于用户的通信协议，总是使用HTTPS协议1.2 域名12api.daniel.com # 存在跨域问题www.daniel.com/api # 实现简单1.3 版本 www.daniel.com/api/v1 1.4 路径，视网络上的任何东西都是资源，均使用名词表示（可复数） https://api.daniel.com/v1/qwer 1.4 met">
   
     <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
   
@@ -87,11 +90,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<h1 id="1-RESTful-API设计"><a href="#1-RESTful-API设计" class="headerlink" title="1.RESTful API设计"></a>1.RESTful API设计</h1><h2 id="1-1-API于用户的通信协议，总是使用HTTPS协议"><a href="#1-1-API于用户的通信协议，总是使用HTTPS协议" class="headerlink" title="1.1 API于用户的通信协议，总是使用HTTPS协议"></a>1.1 API于用户的通信协议，总是使用HTTPS协议</h2><h2 id="1-2-域名"><a href="#1-2-域名" class="headerlink" title="1.2 域名"></a>1.2 域名</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">api.daniel.com # 存在跨域问题</span><br><span class="line">www.daniel.com/api # 实现简单</span><br></pre></td></tr></table></figure></code></pre><h2 id="1-3-版本"><a href="#1-3-版本" class="headerlink" title="1.3 版本"></a>1.3 版本</h2><ul>
+<li><p><a href="http://www.daniel.com/api/v1" target="_blank" rel="noopener">www.daniel.com/api/v1</a></p>
+<h2 id="1-4-路径，视网络上的任何东西都是资源，均使用名词表示（可复数）"><a href="#1-4-路径，视网络上的任何东西都是资源，均使用名词表示（可复数）" class="headerlink" title="1.4 路径，视网络上的任何东西都是资源，均使用名词表示（可复数）"></a>1.4 路径，视网络上的任何东西都是资源，均使用名词表示（可复数）</h2></li>
+<li><p><a href="https://api.daniel.com/v1/qwer" target="_blank" rel="noopener">https://api.daniel.com/v1/qwer</a></p>
+<h2 id="1-4-method"><a href="#1-4-method" class="headerlink" title="1.4 method"></a>1.4 method</h2></li>
+<li><p>GET</p>
+<blockquote>
+<p>从服务器取出资源</p>
+</blockquote>
+</li>
+<li><p>POST </p>
+<blockquote>
+<p>在服务器新建一个资源</p>
+</blockquote>
+</li>
+<li><p>PUT</p>
+<blockquote>
+<p>在服务器更新资源（客户端提供改变后的完整资源）</p>
+</blockquote>
+</li>
+<li><p>PATCH</p>
+<blockquote>
+<p>在服务器更新资源（客户端提供改变的属性）</p>
+</blockquote>
+</li>
+<li><p>DELETE</p>
+<blockquote>
+<p>从服务器删除资源</p>
+</blockquote>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://faker-demoking.github.io/Python/Django/rest-framework.html" data-id="ck36ar4vm000h9ourpead6dll" class="article-share-link">Share</a>
+      <a data-url="https://faker-demoking.github.io/Python/Django/rest-framework.html" data-id="ck3712qga000jzcur3qfecep9" class="article-share-link">Share</a>
       
       
     </footer>
