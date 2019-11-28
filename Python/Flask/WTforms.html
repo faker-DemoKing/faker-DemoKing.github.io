@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>WTforms | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.1 用户登录 app.py   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#!/usr/bin/env python# -*- coding:utf-8 -*-from flask import Flask, render_templ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WTforms">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/WTforms.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.1 用户登录 app.py   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#!/usr/bin/env python# -*- coding:utf-8 -*-from flask import Flask, render_templ">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-28T19:00:03.609Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WTforms">
+<meta name="twitter:description" content="1.1 用户登录 app.py   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#!/usr/bin/env python# -*- coding:utf-8 -*-from flask import Flask, render_templ">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Flask/WTforms.html" class="article-date">
+  <time datetime="2019-11-28T18:59:19.000Z" itemprop="datePublished">2019-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WTforms
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="1-1-用户登录"><a href="#1-1-用户登录" class="headerlink" title="1.1 用户登录"></a>1.1 用户登录</h2><ul>
+<li><p>app.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> Form</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> core</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> html5</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> simple</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> validators</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> widgets</span><br><span class="line"></span><br><span class="line">app = Flask(__name__, template_folder=<span class="string">'templates'</span>)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginForm</span><span class="params">(Form)</span>:</span></span><br><span class="line">    name = simple.StringField(</span><br><span class="line">        label=<span class="string">'用户名'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired(message=<span class="string">'用户名不能为空.'</span>),</span><br><span class="line">            validators.Length(min=<span class="number">6</span>, max=<span class="number">18</span>, message=<span class="string">'用户名长度必须大于%(min)d且小于%(max)d'</span>)</span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.TextInput(),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;</span><br><span class="line"></span><br><span class="line">    )</span><br><span class="line">    pwd = simple.PasswordField(</span><br><span class="line">        label=<span class="string">'密码'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired(message=<span class="string">'密码不能为空.'</span>),</span><br><span class="line">            validators.Length(min=<span class="number">8</span>, message=<span class="string">'用户名长度必须大于%(min)d'</span>),</span><br><span class="line">            validators.Regexp(regex=<span class="string">"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&amp;])[A-Za-z\d$@$!%*?&amp;]&#123;8,&#125;"</span>,</span><br><span class="line">                              message=<span class="string">'密码至少8个字符，至少1个大写字母，1个小写字母，1个数字和1个特殊字符'</span>)</span><br><span class="line"></span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.PasswordInput(),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/login', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">        form = LoginForm()</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'login.html'</span>, form=form)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = LoginForm(formdata=request.form)</span><br><span class="line">        <span class="keyword">if</span> form.validate():</span><br><span class="line">            print(<span class="string">'用户提交数据通过格式验证，提交的值为：'</span>, form.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(form.errors)</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'login.html'</span>, form=form)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>login.html</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;登录&lt;/h1&gt;</span><br><span class="line">&lt;form method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;!--&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;--&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;form.name.label&#125;&#125; &#123;&#123;form.name&#125;&#125; &#123;&#123;form.name.errors[0] &#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--&lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;--&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;form.pwd.label&#125;&#125; &#123;&#123;form.pwd&#125;&#125; &#123;&#123;form.pwd.errors[0] &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="1-2-用户注册"><a href="#1-2-用户注册" class="headerlink" title="1.2 用户注册"></a>1.2 用户注册</h2><ul>
+<li><p>app.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> Form</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> core</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> html5</span><br><span class="line"><span class="keyword">from</span> wtforms.fields <span class="keyword">import</span> simple</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> validators</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> widgets</span><br><span class="line"></span><br><span class="line">app = Flask(__name__, template_folder=<span class="string">'templates'</span>)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RegisterForm</span><span class="params">(Form)</span>:</span></span><br><span class="line">    name = simple.StringField(</span><br><span class="line">        label=<span class="string">'用户名'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired()</span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.TextInput(),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;,</span><br><span class="line">        default=<span class="string">'alex'</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    pwd = simple.PasswordField(</span><br><span class="line">        label=<span class="string">'密码'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired(message=<span class="string">'密码不能为空.'</span>)</span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.PasswordInput(),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    pwd_confirm = simple.PasswordField(</span><br><span class="line">        label=<span class="string">'重复密码'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired(message=<span class="string">'重复密码不能为空.'</span>),</span><br><span class="line">            validators.EqualTo(<span class="string">'pwd'</span>, message=<span class="string">"两次密码输入不一致"</span>)</span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.PasswordInput(),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    email = html5.EmailField(</span><br><span class="line">        label=<span class="string">'邮箱'</span>,</span><br><span class="line">        validators=[</span><br><span class="line">            validators.DataRequired(message=<span class="string">'邮箱不能为空.'</span>),</span><br><span class="line">            validators.Email(message=<span class="string">'邮箱格式错误'</span>)</span><br><span class="line">        ],</span><br><span class="line">        widget=widgets.TextInput(input_type=<span class="string">'email'</span>),</span><br><span class="line">        render_kw=&#123;<span class="string">'class'</span>: <span class="string">'form-control'</span>&#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    gender = core.RadioField(</span><br><span class="line">        label=<span class="string">'性别'</span>,</span><br><span class="line">        choices=(</span><br><span class="line">            (<span class="number">1</span>, <span class="string">'男'</span>),</span><br><span class="line">            (<span class="number">2</span>, <span class="string">'女'</span>),</span><br><span class="line">        ),</span><br><span class="line">        coerce=int</span><br><span class="line">    )</span><br><span class="line">    city = core.SelectField(</span><br><span class="line">        label=<span class="string">'城市'</span>,</span><br><span class="line">        choices=(</span><br><span class="line">            (<span class="string">'bj'</span>, <span class="string">'北京'</span>),</span><br><span class="line">            (<span class="string">'sh'</span>, <span class="string">'上海'</span>),</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    hobby = core.SelectMultipleField(</span><br><span class="line">        label=<span class="string">'爱好'</span>,</span><br><span class="line">        choices=(</span><br><span class="line">            (<span class="number">1</span>, <span class="string">'篮球'</span>),</span><br><span class="line">            (<span class="number">2</span>, <span class="string">'足球'</span>),</span><br><span class="line">        ),</span><br><span class="line">        coerce=int</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    favor = core.SelectMultipleField(</span><br><span class="line">        label=<span class="string">'喜好'</span>,</span><br><span class="line">        choices=(</span><br><span class="line">            (<span class="number">1</span>, <span class="string">'篮球'</span>),</span><br><span class="line">            (<span class="number">2</span>, <span class="string">'足球'</span>),</span><br><span class="line">        ),</span><br><span class="line">        widget=widgets.ListWidget(prefix_label=<span class="literal">False</span>),</span><br><span class="line">        option_widget=widgets.CheckboxInput(),</span><br><span class="line">        coerce=int,</span><br><span class="line">        default=[<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        super(RegisterForm, self).__init__(*args, **kwargs)</span><br><span class="line">        self.favor.choices = ((<span class="number">1</span>, <span class="string">'篮球'</span>), (<span class="number">2</span>, <span class="string">'足球'</span>), (<span class="number">3</span>, <span class="string">'羽毛球'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validate_pwd_confirm</span><span class="params">(self, field)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        自定义pwd_confirm字段规则，例：与pwd字段是否一致</span></span><br><span class="line"><span class="string">        :param field: </span></span><br><span class="line"><span class="string">        :return: </span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 最开始初始化时，self.data中已经有所有的值</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> field.data != self.data[<span class="string">'pwd'</span>]:</span><br><span class="line">            <span class="comment"># raise validators.ValidationError("密码不一致") # 继续后续验证</span></span><br><span class="line">            <span class="keyword">raise</span> validators.StopValidation(<span class="string">"密码不一致"</span>)  <span class="comment"># 不再继续后续验证</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/register', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">        form = RegisterForm(data=&#123;<span class="string">'gender'</span>: <span class="number">1</span>&#125;)</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = RegisterForm(formdata=request.form)</span><br><span class="line">        <span class="keyword">if</span> form.validate():</span><br><span class="line">            print(<span class="string">'用户提交数据通过格式验证，提交的值为：'</span>, form.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(form.errors)</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'register.html'</span>, form=form)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>register.html</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>用户注册<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">novalidate</span> <span class="attr">style</span>=<span class="string">"padding:0  50px"</span>&gt;</span></span><br><span class="line">    &#123;% for item in form %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.label&#125;&#125;: &#123;&#123;item&#125;&#125; &#123;&#123;item.errors[0] &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Flask/WTforms.html" data-id="ck3j32ml0000f38urlokgt4mz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
