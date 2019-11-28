@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>flask-sqlalchemy | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用Flask和SQLAlchemy的管理者  1.app.py   1234567from flask_sqlalchemy import SQLAlchemydb = SQLAlchemy()app = Flask(__name__)app.config.from_object(&apos;settings.DevelopmentConfig&apos;)db.init_app(app)   settings.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="flask-sqlalchemy">
+<meta property="og:url" content="https://faker-demoking.github.io/Python/Flask/flask-sqlalchemy.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="使用Flask和SQLAlchemy的管理者  1.app.py   1234567from flask_sqlalchemy import SQLAlchemydb = SQLAlchemy()app = Flask(__name__)app.config.from_object(&apos;settings.DevelopmentConfig&apos;)db.init_app(app)   settings.">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-28T19:16:33.618Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flask-sqlalchemy">
+<meta name="twitter:description" content="使用Flask和SQLAlchemy的管理者  1.app.py   1234567from flask_sqlalchemy import SQLAlchemydb = SQLAlchemy()app = Flask(__name__)app.config.from_object(&apos;settings.DevelopmentConfig&apos;)db.init_app(app)   settings.">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Python/Flask/flask-sqlalchemy.html" class="article-date">
+  <time datetime="2019-11-28T19:16:19.000Z" itemprop="datePublished">2019-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flask-sqlalchemy
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Flask和SQLAlchemy的管理者</p>
+<ul>
+<li><p>1.app.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"></span><br><span class="line">db = SQLAlchemy()</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config.from_object(<span class="string">'settings.DevelopmentConfig'</span>)</span><br><span class="line">db.init_app(app)</span><br></pre></td></tr></table></figure>
+</li>
+<li><ol start="2">
+<li>settings.DevelopmentConfig<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseConfig</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="comment"># SESSION_TYPE = 'redis' # session 类型为 redis</span></span><br><span class="line"><span class="comment"># SESSION_KEY_PREFIX = 'session:' # 保存到session中的值的前缀</span></span><br><span class="line"><span class="comment"># SEESION_PERMANENT= True # 如果设置为False，则关闭浏览器session就失效</span></span><br><span class="line"><span class="comment"># SESSION_USE_SIGNER = False # 是否对发送到浏览器上的 session:cookie值进行加密</span></span><br><span class="line"></span><br><span class="line">DEBUG = <span class="literal">False</span></span><br><span class="line">TESTING = <span class="literal">False</span></span><br><span class="line">SQLALCHEMY_DATABASE_URI = <span class="string">'mysql+pymysql://root:123456@192.168.0.123:3306/faker?charset=utf8'</span></span><br><span class="line">SQLALCHEMY_POOL_SIZE = <span class="number">5</span></span><br><span class="line">SQLALCHEMY_POOL_TIMEOUT = <span class="number">30</span></span><br><span class="line">SQLALCHEMY_POOL_RECYCLE = <span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 追踪对象的修改并且发哦是那个信号</span></span><br><span class="line">SQLALCHEMY_TRACK_MODIFICATIONS = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="http://flask-sqlalchemy.palletsprojects.com/en/2.x/" target="_blank" rel="noopener">http://flask-sqlalchemy.palletsprojects.com/en/2.x/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Python/Flask/flask-sqlalchemy.html" data-id="ck3j3o2hm000nycurbdrs84a4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
