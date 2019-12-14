@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ansible-playbook | Faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.语法1234567--- # 开头- hosts: webser # 主机名  remote_user: root # 远程用户    tasks: # 定义一个任务   - name: hello # 任务名字     command: hostname # 模块名字以及命令   运行playbook  1ansible-playbook hostname.yml    2. ansibl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ansible-playbook">
+<meta property="og:url" content="https://faker-demoking.github.io/Linux/ansible/ansible-playbook.html">
+<meta property="og:site_name" content="Faker">
+<meta property="og:description" content="1.语法1234567--- # 开头- hosts: webser # 主机名  remote_user: root # 远程用户    tasks: # 定义一个任务   - name: hello # 任务名字     command: hostname # 模块名字以及命令   运行playbook  1ansible-playbook hostname.yml    2. ansibl">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-12-14T12:52:53.012Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ansible-playbook">
+<meta name="twitter:description" content="1.语法1234567--- # 开头- hosts: webser # 主机名  remote_user: root # 远程用户    tasks: # 定义一个任务   - name: hello # 任务名字     command: hostname # 模块名字以及命令   运行playbook  1ansible-playbook hostname.yml    2. ansibl">
+  
+    <link rel="alternate" href="/atom.xml" title="Faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">SKT faker -&gt; demon king</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://faker-demoking.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Linux/ansible/ansible-playbook.html" class="article-date">
+  <time datetime="2019-10-08T13:32:27.000Z" itemprop="datePublished">2019-10-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ansible-playbook
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h1><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span><span class="bullet">--</span> <span class="comment"># 开头</span></span><br><span class="line"><span class="attr">- hosts:</span> <span class="string">webser</span> <span class="comment"># 主机名</span></span><br><span class="line"><span class="attr">  remote_user:</span> <span class="string">root</span> <span class="comment"># 远程用户</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">  tasks:</span> <span class="comment"># 定义一个任务</span></span><br><span class="line"><span class="attr">   - name:</span> <span class="string">hello</span> <span class="comment"># 任务名字</span></span><br><span class="line"><span class="attr">     command:</span> <span class="string">hostname</span> <span class="comment"># 模块名字以及命令</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行playbook  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook hostname.yml</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="2-ansible-vault"><a href="#2-ansible-vault" class="headerlink" title="2. ansible-vault"></a>2. ansible-vault</h1><p>加密playbook</p>
+<ul>
+<li><p>例子-1：加密一个playbook</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-vault encrypt hostname.yml</span><br><span class="line"># 然后输入密码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：解密一个playbook</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-vault decrypt hostname.yml</span><br><span class="line"># 然后输入你加密时输入的密码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-3：查看已加密的playbook</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-vault view hostname.yml</span><br><span class="line"># 输入密码</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="3-ansible-console"><a href="#3-ansible-console" class="headerlink" title="3. ansible-console"></a>3. ansible-console</h1><p>2.0+新增，可交互执行命令，支持tab<br>交互式执行模块<br>root@all (2)[f:5]$<br>    root 就是远程执行命令的用户，<br>    @all就是主机组或者单个主机，all代表所有<br>    (2）总主机数<br>    [f:5] 任务并发数<br>    # forks 10 修改并发数</p>
+<ul>
+<li>交互执行命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 192.168.1.1 # 进入这个主机</span><br><span class="line">hostname name=node02 # 修改主机名</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="3-详细介绍"><a href="#3-详细介绍" class="headerlink" title="3.详细介绍"></a>3.详细介绍</h1><p>playbook是由一个或多个play组成的列表<br>play的主要功能在将实现归并为一组的主机装扮成事先通过ansible中的task定义好的角色。从根本上来讲，所谓task无非是调用ansible的一个module。<br>将多个play组织在一个playbook，就可以让他们联同起来按实现编排的机制完成任务</p>
+<h2 id="3-1-playbook核心元素"><a href="#3-1-playbook核心元素" class="headerlink" title="3.1 playbook核心元素"></a>3.1 playbook核心元素</h2><ul>
+<li><p>1.hosts </p>
+<p>  执行的远程主机列表</p>
+</li>
+<li><p>2.tasks</p>
+<p>  任务集</p>
+</li>
+<li><p>3.varniables </p>
+<p>  内置变量或自定义变量在playbook中调用</p>
+</li>
+<li><p>4.templates</p>
+<p>  模板，可替换模板文件中的变量并实现一些简单逻辑的文件</p>
+</li>
+<li><p>5.Handlers</p>
+<p>  和notity结合使用，由特定条件触发的操作，满足条件方才执行，否则不执行</p>
+</li>
+<li><p>6.tags<br>标签，指定某条任务执行，用于选择运行playbook中的部分代码。<br>ansible具有幂等性，因此会自动跳过没有变化的部分，即便如此，有些代码为测试其确实没有发生变化的时间依然会非常地长。<br>此时，如果确信其没有变化，就可以通过tags跳过这些代码片段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook -t tagsname test.yml</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-2-playbook基础组件"><a href="#3-2-playbook基础组件" class="headerlink" title="3.2 playbook基础组件"></a>3.2 playbook基础组件</h2><h3 id="3-2-1-hosts"><a href="#3-2-1-hosts" class="headerlink" title="3.2.1 hosts"></a>3.2.1 hosts</h3><p>用于指定要执行指定任务的主机<br>可以有如下格式:<br>192.168.1.1<br>192.168.1.*<br>group01.webser.com<br>group01.webser.com:group02.webser.com<br>webser:dbser # 两个组的并集<br>webser:&amp;dbser # 两个组的交集<br>webser:!dbser # 在webser组但不在dbser组</p>
+<ul>
+<li>示例  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- hosts: webser:dbser</span><br><span class="line">remote_user: root</span><br><span class="line"></span><br><span class="line">tasks:</span><br><span class="line">    - name: create new file</span><br><span class="line">    file: name=/data/1.txt state=touch</span><br><span class="line">    - name: cteate new user</span><br><span class="line">    user: name=test1 system=yes shell=/sbin/nologin</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-2-2-remote-user"><a href="#3-2-2-remote-user" class="headerlink" title="3.2.2 remote_user"></a>3.2.2 remote_user</h3><p>可用于hosts和tasks中。<br>也可以通过指定通过sudo的方式在远处上执行任务，其可用play全局或某任务；此外，甚至可以在sudo时使用sudo_user指定sudo切换的用户<br>可以有如下格式<br>remote_user: test1<br>sudo: yes # 默认sudo用户为root<br>sudo_user: admin # 指定sudo用户为admin</p>
+<h3 id="3-2-3-tasks"><a href="#3-2-3-tasks" class="headerlink" title="3.2.3 tasks"></a>3.2.3 tasks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">任务列表</span><br><span class="line">格式:</span><br><span class="line">    action: module arguments</span><br><span class="line">    module: arguments # 建议使用</span><br><span class="line">    # 注意：shell和command模块后面跟命令，不是key=value</span><br><span class="line">某任务的状态在运行后为changed时，可通过notify通知相应的handlers</span><br><span class="line">任务可通过&quot;tags&quot;打标签，而后可在ansible-playbook命令使用-t指定进行调用</span><br><span class="line">示例：</span><br><span class="line">tasks:</span><br><span class="line">  - name: disable selinux</span><br><span class="line">    command: /sbin/setenforce 0</span><br><span class="line"># 如果命令或脚本的退出码不为0，可以使用如下方式替代</span><br><span class="line">tasks:</span><br><span class="line">  - name: run this command and ignore the result</span><br><span class="line">    shell: /usr/bin/somecommand ||/bin/true</span><br><span class="line">或者使用ignore_errors来忽略错误信息</span><br><span class="line">tasks:</span><br><span class="line">  - name: run this command and ignore the result</span><br><span class="line">    shell: /usr/bin/somecommand</span><br><span class="line">    ignore_errors: True</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-4-运行playbook"><a href="#3-2-4-运行playbook" class="headerlink" title="3.2.4 运行playbook"></a>3.2.4 运行playbook</h3><ul>
+<li><p>简单运行</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-plabook &lt;filename.yml&gt; [options]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常见选项<br>  –check 只检测可能会发生的改变<br>  –list-hosts 列出运行任务的主机<br>  –limit 主机列表 只针对主机列表中的主机执行<br>  -v 显示过程 -vv -vvv更详细</p>
+</li>
+</ul>
+<h2 id="3-3-handlers和notify结合使用触发条件"><a href="#3-3-handlers和notify结合使用触发条件" class="headerlink" title="3.3 handlers和notify结合使用触发条件"></a>3.3 handlers和notify结合使用触发条件</h2><ul>
+<li><p>3.3.1 handlers</p>
+<p>  是task列表，这些task与之前说的task并没有本质上的不同，用于当关注的资源发生变化时，才会采取一定的操作</p>
+</li>
+<li><p>3.3.2 notify</p>
+<p>  此action可用于在每个play的最后被触发，<br>这样可避免多次有改变发生时都执行指定的操作，仅在所有的变化发生完成后一次性地执行指定操作。<br>  在notify中列出的操作成为handler，也就是notify中调用handler中定义的操作</p>
+</li>
+</ul>
+<ul>
+<li>例子-1：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- host: webser</span><br><span class="line">remote_user: root</span><br><span class="line"></span><br><span class="line">tasks:</span><br><span class="line">- name: install httpd package</span><br><span class="line">    yum: name=httpd</span><br><span class="line">- name: copy conf file</span><br><span class="line">    copy: src=files/httpd.conf dest=/etc/httpd/conf/ backup=yes</span><br><span class="line">    notify: restart service # 和handlers配套，注意名字一样,动作发生变化，通知响应handerls</span><br><span class="line">- name: start service</span><br><span class="line">    service: name=httpd state=started enabled=yes</span><br><span class="line"></span><br><span class="line">handlers:</span><br><span class="line">    - name: restart service</span><br><span class="line">    service: name=httpd state=restarted enabled=yes</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-4-tags的使用"><a href="#3-4-tags的使用" class="headerlink" title="3.4 tags的使用"></a>3.4 tags的使用</h2><ul>
+<li><p>例子-1:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- host: webser</span><br><span class="line">remote_user: root</span><br><span class="line"></span><br><span class="line">tasks:</span><br><span class="line">- name: install httpd package</span><br><span class="line">    yum: name=httpd</span><br><span class="line">    tags: inshttpd</span><br><span class="line">- name: copy conf file</span><br><span class="line">    copy: src=files/httpd.conf dest=/etc/httpd/conf/ backup=yes</span><br><span class="line">    notify: restart service # 和handlers配套，注意名字一样</span><br><span class="line">- name: start service</span><br><span class="line">    service: name=httpd state=started enabled=yes</span><br><span class="line">    tags: rshttpd</span><br><span class="line"></span><br><span class="line">handlers:</span><br><span class="line">    - name: restart service</span><br><span class="line">    service: name=httpd state=restarted enabled=yes</span><br><span class="line"># 然后我运行这个playbook的时候就可以指定某个action执行</span><br><span class="line">ansible-playbook -t rshttpd httpd.yml</span><br><span class="line"># 指定多个tags运行</span><br><span class="line">ansible-playbook -t inshttpd,rshttpd httpd.yml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看某个playbook的tags</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook httpd.yml --list-tags</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-5-变量的使用"><a href="#3-5-变量的使用" class="headerlink" title="3.5 变量的使用"></a>3.5 变量的使用</h2><p>变量名：仅能由字母、数字和下划线组成，且只能以字母开头<br>变量来源：<br>    1、ansible setup facts 远程主机的所有变量都可直接调用<br>    2、在/etc/ansible/hosts/中定义<br>        普通变量：主机组中主机单独定义，优先级高于公共变量<br>        公共（组变量):针对主机组中所有主机定义统一变量<br>    3、通过命令行指定变量，优先级最高<br>        ansible-playbook -e varname=value<br>    4、在playbook中定义<br>        vars:<br>        - var1: value1<br>        - var2: value2<br>    5.在role中定义<br>    6.vars_propmt交互式定义变量<br>    7.vars_file</p>
+<ul>
+<li><p>例子-1：给playbook传变量</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- host: &#123;&#123; host &#125;&#125;</span><br><span class="line">remote_user: root</span><br><span class="line"></span><br><span class="line">tasks:</span><br><span class="line">- name: install httpd package</span><br><span class="line">    yum: name=httpd</span><br><span class="line">    tags: inshttpd</span><br><span class="line">- name: copy conf file</span><br><span class="line">    copy: src=files/httpd.conf dest=/etc/httpd/conf/ backup=yes</span><br><span class="line">    notify: restart service # 和handlers配套，注意名字一样</span><br><span class="line">- name: start service</span><br><span class="line">    service: name=httpd state=started enabled=yes</span><br><span class="line">    tags: rshttpd</span><br><span class="line"></span><br><span class="line">handlers:</span><br><span class="line">    - name: restart service</span><br><span class="line">    service: name=httpd state=restarted enabled=yes</span><br><span class="line">ansible-playbook -e &apos;host=webser&apos; httpd.yml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-2：vars_propmt定义变量</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">gather_facts: False</span><br><span class="line">vars_prompt:</span><br><span class="line">- name: &quot;one&quot;</span><br><span class="line">    prompt: &quot;Please input one value&quot;</span><br><span class="line">    private: no</span><br><span class="line">- name: &quot;two&quot;</span><br><span class="line">    prompt: &quot;Please input two value&quot;</span><br><span class="line">    default: &apos;good&apos;</span><br><span class="line">    private: no</span><br><span class="line">tasks:</span><br><span class="line">- fail:</span><br><span class="line">    msg: &quot;什么东西？&quot;</span><br><span class="line">    when: one!=&quot;one&quot;</span><br><span class="line">- name: display one value</span><br><span class="line">    debug: msg= &quot;one value is &#123;&#123; one &#125;&#125;&quot;</span><br><span class="line">- name: display two value</span><br><span class="line">    debug: msg= &quot;two value is &#123;&#123; two &#125;&#125;&quot;</span><br><span class="line"># 在例子中通过vars_prompt参数进行交互传入两个变量的值，变量名分别是one和two，one变量定义为非私有变量，two变量定义为私有变量并且还提供一个默认值。如果不给变量two传入值的话，two变量的值将会为默认值。private：yes和private：no的作用是显示交互模式下输入的变量值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子-3：在playbook文件内使用vars_files</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: all</span><br><span class="line">remote_user: root</span><br><span class="line">vars_files:</span><br><span class="line">- ../vars/vars.yml</span><br><span class="line"></span><br><span class="line">tasks:</span><br><span class="line">- name: display vars.yml</span><br><span class="line">    debug: msg=&quot;&#123;&#123; var1 &#125;&#125; &#123;&#123; var2 &#125;&#125;&quot;</span><br><span class="line"># 找个文件专门放个变量</span><br><span class="line">vars.yml文件内容</span><br><span class="line">var1: httpd</span><br><span class="line">var2: nginx</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://faker-demoking.github.io/Linux/ansible/ansible-playbook.html" data-id="ck45kzmrc000duwurfkamxyu6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/08/index/">目录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
